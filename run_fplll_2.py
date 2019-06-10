@@ -11,9 +11,9 @@ from ssproblem import *
 FIRST_P = 1
 LAST_P = 50
 NUM_INSTANCES = 50
-DIMENSION = 80
+DIMENSION = 84
 STARTING_BLOCK_SIZE = 30
-PROBLEMS_PATH = "instances/dim_80/set_05/"
+PROBLEMS_PATH = "instances/dim_" + str(DIMENSION) + "/set_04/"
 #LATTICES_PATH = PROBLEMS_PATH + "/N_" + str(N) + "/"
 FPLLL_PATH = "../fplll/fplll/fplll"
 LOGTOFILE = True
@@ -86,7 +86,7 @@ def main():
 	i = STARTING_BLOCK_SIZE
 
 	suite_start_time = datetime.datetime.now()
-	logfile_name = "results/" + suite_start_time.strftime("%d%m%Y_%H:%M:%S") + ".log"
+#	logfile_name = "results/" + suite_start_time.strftime("%d%m%Y_%H:%M:%S") + ".log"
 
 #	if (LOGTOFILE):
 #		logfile = open(logfile_name, 'w')
