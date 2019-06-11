@@ -1,0 +1,423 @@
+Script started on 2019-06-11 07:01:03+0200
+Test suite start at 11.06.2019, 07:01:03 
+
+Subset Sum Problem dimension: 84 ; Number of problem instances: 50
+set '03' of instances ; N = 14
+===============================================
+BKZ block dimension: 30 ; #solved instances: 0 ; #unsolved instances: 50 
+
+running test on instance 1 ... time taken: 0.83708 secs
+running test on instance 2 ... time taken: 1.30423 secs
+running test on instance 3 ... time taken: 0.98616 secs ---> instance solved (problem dim. = 0.7005830070719293)
+running test on instance 4 ... time taken: 0.53285 secs
+running test on instance 5 ... time taken: 0.98382 secs
+running test on instance 6 ... time taken: 0.74936 secs
+running test on instance 7 ... time taken: 0.48242 secs
+running test on instance 8 ... time taken: 0.68005 secs
+running test on instance 9 ... time taken: 1.09352 secs
+running test on instance 10 ... time taken: 1.1205 secs
+running test on instance 11 ... time taken: 1.07426 secs
+running test on instance 12 ... time taken: 0.83151 secs ---> instance solved (problem dim. = 0.6519318888849838)
+running test on instance 13 ... time taken: 1.313 secs
+running test on instance 14 ... time taken: 0.69188 secs ---> instance solved (problem dim. = 0.6973781705218652)
+running test on instance 15 ... time taken: 0.68881 secs
+running test on instance 16 ... time taken: 0.49153 secs
+running test on instance 17 ... time taken: 0.80916 secs ---> instance solved (problem dim. = 0.6657292664880018)
+running test on instance 18 ... time taken: 0.30376 secs
+running test on instance 19 ... time taken: 0.62347 secs
+running test on instance 20 ... time taken: 0.77696 secs
+running test on instance 21 ... time taken: 0.95325 secs ---> instance solved (problem dim. = 0.656852003388089)
+running test on instance 22 ... time taken: 1.04334 secs
+running test on instance 23 ... time taken: 0.30481 secs
+running test on instance 24 ... time taken: 0.77657 secs
+running test on instance 25 ... time taken: 0.72147 secs ---> instance solved (problem dim. = 0.6812640225158447)
+running test on instance 26 ... time taken: 0.87746 secs
+running test on instance 27 ... time taken: 1.25304 secs
+running test on instance 28 ... time taken: 0.81024 secs
+running test on instance 29 ... time taken: 1.38396 secs ---> instance solved (problem dim. = 0.7082564750585103)
+running test on instance 30 ... time taken: 0.76968 secs
+running test on instance 31 ... time taken: 1.17036 secs
+running test on instance 32 ... time taken: 1.66436 secs
+running test on instance 33 ... time taken: 0.80984 secs
+running test on instance 34 ... time taken: 1.59857 secs
+running test on instance 35 ... time taken: 1.35002 secs
+running test on instance 36 ... time taken: 1.13604 secs
+running test on instance 37 ... time taken: 0.86061 secs
+running test on instance 38 ... time taken: 0.58031 secs
+running test on instance 39 ... time taken: 1.28674 secs
+running test on instance 40 ... time taken: 0.81271 secs
+running test on instance 41 ... time taken: 2.04252 secs
+running test on instance 42 ... time taken: 0.47465 secs
+running test on instance 43 ... time taken: 0.88466 secs
+running test on instance 44 ... time taken: 1.05174 secs
+running test on instance 45 ... time taken: 1.02832 secs
+running test on instance 46 ... time taken: 1.03334 secs ---> instance solved (problem dim. = 0.6646690964370354)
+running test on instance 47 ... time taken: 0.3438 secs
+running test on instance 48 ... time taken: 0.71515 secs
+running test on instance 49 ... time taken: 0.9125 secs
+running test on instance 50 ... time taken: 1.10443 secs
+
+===============================================
+===============================================
+BKZ block dimension: 31 ; #solved instances: 8 ; #unsolved instances: 42 
+
+running test on instance 1 ... time taken: 1.55056 secs
+running test on instance 2 ... time taken: 2.86655 secs
+running test on instance 4 ... time taken: 0.90177 secs
+running test on instance 5 ... time taken: 1.84208 secs ---> instance solved (problem dim. = 0.6527323925620623)
+running test on instance 6 ... time taken: 1.79961 secs
+running test on instance 7 ... time taken: 1.87847 secs
+running test on instance 8 ... time taken: 1.21073 secs
+running test on instance 9 ... time taken: 0.69128 secs
+running test on instance 10 ... time taken: 0.88543 secs ---> instance solved (problem dim. = 0.7556383000656055)
+running test on instance 11 ... time taken: 1.33107 secs
+running test on instance 13 ... time taken: 0.689 secs
+running test on instance 15 ... time taken: 1.4257 secs
+running test on instance 16 ... time taken: 0.66772 secs
+running test on instance 18 ... time taken: 1.99626 secs
+running test on instance 19 ... time taken: 1.28764 secs ---> instance solved (problem dim. = 0.6996228996342131)
+running test on instance 20 ... time taken: 1.75244 secs
+running test on instance 22 ... time taken: 1.22702 secs
+running test on instance 23 ... time taken: 0.90978 secs
+running test on instance 24 ... time taken: 1.18264 secs
+running test on instance 26 ... time taken: 1.5364 secs
+running test on instance 27 ... time taken: 1.78073 secs
+running test on instance 28 ... time taken: 1.30455 secs ---> instance solved (problem dim. = 0.7501623183173692)
+running test on instance 30 ... time taken: 2.86757 secs
+running test on instance 31 ... time taken: 1.00951 secs
+running test on instance 32 ... time taken: 2.43098 secs ---> instance solved (problem dim. = 0.700259292530034)
+running test on instance 33 ... time taken: 0.83836 secs
+running test on instance 34 ... time taken: 0.70371 secs
+running test on instance 35 ... time taken: 1.76576 secs
+running test on instance 36 ... time taken: 0.85867 secs
+running test on instance 37 ... time taken: 2.06139 secs ---> instance solved (problem dim. = 0.7166089362430312)
+running test on instance 38 ... time taken: 1.51119 secs
+running test on instance 39 ... time taken: 2.43144 secs
+running test on instance 40 ... time taken: 0.98729 secs
+running test on instance 41 ... time taken: 1.00236 secs
+running test on instance 42 ... time taken: 1.80253 secs
+running test on instance 43 ... time taken: 1.29005 secs
+running test on instance 44 ... time taken: 1.62772 secs
+running test on instance 45 ... time taken: 2.30337 secs
+running test on instance 47 ... time taken: 1.31887 secs
+running test on instance 48 ... time taken: 1.11744 secs
+running test on instance 49 ... time taken: 0.94504 secs
+running test on instance 50 ... time taken: 1.77432 secs ---> instance solved (problem dim. = 0.725454970989476)
+
+===============================================
+===============================================
+BKZ block dimension: 32 ; #solved instances: 15 ; #unsolved instances: 35 
+
+running test on instance 1 ... time taken: 0.96561 secs
+running test on instance 2 ... time taken: 2.19324 secs
+running test on instance 4 ... time taken: 1.87343 secs
+running test on instance 6 ... time taken: 0.59541 secs
+running test on instance 7 ... time taken: 0.48913 secs
+running test on instance 8 ... time taken: 0.83316 secs ---> instance solved (problem dim. = 0.7165794209499652)
+running test on instance 9 ... time taken: 2.59131 secs
+running test on instance 11 ... time taken: 1.02574 secs
+running test on instance 13 ... time taken: 0.6177 secs
+running test on instance 15 ... time taken: 1.68734 secs
+running test on instance 16 ... time taken: 0.78412 secs
+running test on instance 18 ... time taken: 1.92821 secs
+running test on instance 20 ... time taken: 1.3334 secs
+running test on instance 22 ... time taken: 2.179 secs ---> instance solved (problem dim. = 0.6790254207139251)
+running test on instance 23 ... time taken: 0.82022 secs
+running test on instance 24 ... time taken: 0.55649 secs
+running test on instance 26 ... time taken: 1.29781 secs
+running test on instance 27 ... time taken: 1.80204 secs ---> instance solved (problem dim. = 0.755516870141985)
+running test on instance 30 ... time taken: 4.48395 secs ---> instance solved (problem dim. = 0.7407654538098806)
+running test on instance 31 ... time taken: 2.02933 secs
+running test on instance 33 ... time taken: 0.65367 secs
+running test on instance 34 ... time taken: 2.21052 secs
+running test on instance 35 ... time taken: 1.30334 secs
+running test on instance 36 ... time taken: 0.88406 secs
+running test on instance 38 ... time taken: 1.18171 secs
+running test on instance 39 ... time taken: 1.18565 secs
+running test on instance 40 ... time taken: 0.60725 secs
+running test on instance 41 ... time taken: 1.2241 secs
+running test on instance 42 ... time taken: 0.76262 secs
+running test on instance 43 ... time taken: 2.66181 secs ---> instance solved (problem dim. = 0.7061651536040763)
+running test on instance 44 ... time taken: 2.37902 secs
+running test on instance 45 ... time taken: 1.84042 secs
+running test on instance 47 ... time taken: 0.50274 secs
+running test on instance 48 ... time taken: 2.24628 secs
+running test on instance 49 ... time taken: 1.55386 secs
+
+===============================================
+===============================================
+BKZ block dimension: 33 ; #solved instances: 20 ; #unsolved instances: 30 
+
+running test on instance 1 ... time taken: 2.16988 secs
+running test on instance 2 ... time taken: 2.26527 secs ---> instance solved (problem dim. = 0.7684643285510859)
+running test on instance 4 ... time taken: 2.74855 secs
+running test on instance 6 ... time taken: 1.67052 secs
+running test on instance 7 ... time taken: 1.98951 secs
+running test on instance 9 ... time taken: 3.04629 secs
+running test on instance 11 ... time taken: 0.94809 secs
+running test on instance 13 ... time taken: 3.67478 secs ---> instance solved (problem dim. = 0.7361226258458985)
+running test on instance 15 ... time taken: 2.54148 secs
+running test on instance 16 ... time taken: 2.16355 secs
+running test on instance 18 ... time taken: 1.36983 secs
+running test on instance 20 ... time taken: 2.33275 secs
+running test on instance 23 ... time taken: 1.52553 secs
+running test on instance 24 ... time taken: 2.3117 secs
+running test on instance 26 ... time taken: 2.36091 secs ---> instance solved (problem dim. = 0.7880490337654671)
+running test on instance 31 ... time taken: 1.30027 secs ---> instance solved (problem dim. = 0.7652178708533247)
+running test on instance 33 ... time taken: 2.85366 secs
+running test on instance 34 ... time taken: 0.80012 secs
+running test on instance 35 ... time taken: 2.42483 secs
+running test on instance 36 ... time taken: 2.62595 secs
+running test on instance 38 ... time taken: 0.94627 secs
+running test on instance 39 ... time taken: 1.79224 secs
+running test on instance 40 ... time taken: 1.83272 secs ---> instance solved (problem dim. = 0.726634279715496)
+running test on instance 41 ... time taken: 1.52591 secs
+running test on instance 42 ... time taken: 2.21134 secs
+running test on instance 44 ... time taken: 2.90926 secs
+running test on instance 45 ... time taken: 1.92132 secs
+running test on instance 47 ... time taken: 1.48666 secs
+running test on instance 48 ... time taken: 1.60173 secs
+running test on instance 49 ... time taken: 0.92809 secs
+
+===============================================
+===============================================
+BKZ block dimension: 34 ; #solved instances: 25 ; #unsolved instances: 25 
+
+running test on instance 1 ... time taken: 1.84365 secs
+running test on instance 4 ... time taken: 1.6202 secs
+running test on instance 6 ... time taken: 1.1135 secs
+running test on instance 7 ... time taken: 2.38405 secs
+running test on instance 9 ... time taken: 2.44794 secs
+running test on instance 11 ... time taken: 1.96206 secs ---> instance solved (problem dim. = 0.7608438885122256)
+running test on instance 15 ... time taken: 1.70864 secs
+running test on instance 16 ... time taken: 3.25085 secs
+running test on instance 18 ... time taken: 4.83337 secs
+running test on instance 20 ... time taken: 2.85705 secs
+running test on instance 23 ... time taken: 3.14348 secs
+running test on instance 24 ... time taken: 1.70412 secs
+running test on instance 33 ... time taken: 1.63411 secs
+running test on instance 34 ... time taken: 3.08374 secs ---> instance solved (problem dim. = 0.7549888472143871)
+running test on instance 35 ... time taken: 2.57018 secs
+running test on instance 36 ... time taken: 1.31016 secs
+running test on instance 38 ... time taken: 0.74095 secs
+running test on instance 39 ... time taken: 1.71828 secs
+running test on instance 41 ... time taken: 2.11688 secs
+running test on instance 42 ... time taken: 1.8528 secs
+running test on instance 44 ... time taken: 3.18992 secs
+running test on instance 45 ... time taken: 1.2035 secs
+running test on instance 47 ... time taken: 2.09596 secs
+running test on instance 48 ... time taken: 2.34391 secs
+running test on instance 49 ... time taken: 2.00329 secs
+
+===============================================
+===============================================
+BKZ block dimension: 35 ; #solved instances: 27 ; #unsolved instances: 23 
+
+running test on instance 1 ... time taken: 2.02723 secs
+running test on instance 4 ... time taken: 6.38536 secs
+running test on instance 6 ... time taken: 4.89956 secs
+running test on instance 7 ... time taken: 3.94414 secs
+running test on instance 9 ... time taken: 3.06439 secs
+running test on instance 15 ... time taken: 3.08183 secs
+running test on instance 16 ... time taken: 2.24168 secs
+running test on instance 18 ... time taken: 1.78566 secs
+running test on instance 20 ... time taken: 3.0312 secs
+running test on instance 23 ... time taken: 1.72282 secs
+running test on instance 24 ... time taken: 3.62609 secs
+running test on instance 33 ... time taken: 6.43869 secs
+running test on instance 35 ... time taken: 5.5161 secs
+running test on instance 36 ... time taken: 2.02654 secs
+running test on instance 38 ... time taken: 3.27127 secs
+running test on instance 39 ... time taken: 2.6463 secs ---> instance solved (problem dim. = 0.7726964751482034)
+running test on instance 41 ... time taken: 3.73997 secs
+running test on instance 42 ... time taken: 1.76945 secs
+running test on instance 44 ... time taken: 2.4187 secs ---> instance solved (problem dim. = 0.7506007322350643)
+running test on instance 45 ... time taken: 3.92838 secs ---> instance solved (problem dim. = 0.7878850830425603)
+running test on instance 47 ... time taken: 2.64829 secs
+running test on instance 48 ... time taken: 6.67236 secs
+running test on instance 49 ... time taken: 5.16607 secs ---> instance solved (problem dim. = 0.8143040389716186)
+
+===============================================
+===============================================
+BKZ block dimension: 36 ; #solved instances: 31 ; #unsolved instances: 19 
+
+running test on instance 1 ... time taken: 2.921 secs
+running test on instance 4 ... time taken: 3.79097 secs
+running test on instance 6 ... time taken: 1.95618 secs
+running test on instance 7 ... time taken: 1.72714 secs
+running test on instance 9 ... time taken: 4.73101 secs
+running test on instance 15 ... time taken: 4.12766 secs ---> instance solved (problem dim. = 0.8145874968405098)
+running test on instance 16 ... time taken: 5.46731 secs
+running test on instance 18 ... time taken: 1.25767 secs
+running test on instance 20 ... time taken: 1.49312 secs
+running test on instance 23 ... time taken: 2.59716 secs
+running test on instance 24 ... time taken: 2.96797 secs
+running test on instance 33 ... time taken: 1.78055 secs
+running test on instance 35 ... time taken: 5.87576 secs ---> instance solved (problem dim. = 0.7783114807776458)
+running test on instance 36 ... time taken: 5.1061 secs
+running test on instance 38 ... time taken: 10.18898 secs
+running test on instance 41 ... time taken: 2.88215 secs
+running test on instance 42 ... time taken: 2.15639 secs
+running test on instance 47 ... time taken: 8.63043 secs
+running test on instance 48 ... time taken: 8.41891 secs
+
+===============================================
+===============================================
+BKZ block dimension: 37 ; #solved instances: 33 ; #unsolved instances: 17 
+
+running test on instance 1 ... time taken: 2.30007 secs
+running test on instance 4 ... time taken: 5.3509 secs
+running test on instance 6 ... time taken: 8.99987 secs
+running test on instance 7 ... time taken: 4.97698 secs
+running test on instance 9 ... time taken: 5.74654 secs
+running test on instance 16 ... time taken: 3.96056 secs
+running test on instance 18 ... time taken: 3.29911 secs
+running test on instance 20 ... time taken: 3.97683 secs
+running test on instance 23 ... time taken: 3.06208 secs
+running test on instance 24 ... time taken: 8.75785 secs
+running test on instance 33 ... time taken: 1.50993 secs
+running test on instance 36 ... time taken: 7.96866 secs
+running test on instance 38 ... time taken: 5.86636 secs
+running test on instance 41 ... time taken: 1.81461 secs
+running test on instance 42 ... time taken: 4.64891 secs
+running test on instance 47 ... time taken: 5.26495 secs
+running test on instance 48 ... time taken: 8.66312 secs
+
+===============================================
+===============================================
+BKZ block dimension: 38 ; #solved instances: 33 ; #unsolved instances: 17 
+
+running test on instance 1 ... time taken: 9.90846 secs
+running test on instance 4 ... time taken: 7.67844 secs
+running test on instance 6 ... time taken: 8.17692 secs
+running test on instance 7 ... time taken: 7.17602 secs
+running test on instance 9 ... time taken: 7.04364 secs
+running test on instance 16 ... time taken: 4.41723 secs
+running test on instance 18 ... time taken: 5.14209 secs
+running test on instance 20 ... time taken: 10.51012 secs
+running test on instance 23 ... time taken: 2.57896 secs
+running test on instance 24 ... time taken: 3.55371 secs
+running test on instance 33 ... time taken: 4.85747 secs
+running test on instance 36 ... time taken: 7.73705 secs
+running test on instance 38 ... time taken: 6.44379 secs
+running test on instance 41 ... time taken: 5.8865 secs ---> instance solved (problem dim. = 0.831763534235102)
+running test on instance 42 ... time taken: 9.11557 secs
+running test on instance 47 ... time taken: 5.28195 secs
+running test on instance 48 ... time taken: 16.00358 secs
+
+===============================================
+===============================================
+BKZ block dimension: 39 ; #solved instances: 34 ; #unsolved instances: 16 
+
+running test on instance 1 ... time taken: 5.60774 secs
+running test on instance 4 ... time taken: 6.44017 secs
+running test on instance 6 ... time taken: 11.69398 secs
+running test on instance 7 ... time taken: 9.98221 secs ---> instance solved (problem dim. = 0.8682992871518314)
+running test on instance 9 ... time taken: 11.40788 secs
+running test on instance 16 ... time taken: 5.99578 secs
+running test on instance 18 ... time taken: 6.33037 secs ---> instance solved (problem dim. = 0.8828145213159833)
+running test on instance 20 ... time taken: 4.31453 secs
+running test on instance 23 ... time taken: 7.87685 secs
+running test on instance 24 ... time taken: 10.43353 secs
+running test on instance 33 ... time taken: 9.68182 secs
+running test on instance 36 ... time taken: 11.94315 secs
+running test on instance 38 ... time taken: 9.72665 secs
+running test on instance 42 ... time taken: 11.24167 secs
+running test on instance 47 ... time taken: 20.29041 secs
+running test on instance 48 ... time taken: 14.47808 secs ---> instance solved (problem dim. = 0.8487019495492979)
+
+===============================================
+===============================================
+BKZ block dimension: 40 ; #solved instances: 37 ; #unsolved instances: 13 
+
+running test on instance 1 ... time taken: 6.80864 secs
+running test on instance 4 ... time taken: 22.31764 secs
+running test on instance 6 ... time taken: 6.06568 secs
+running test on instance 9 ... time taken: 14.85589 secs
+running test on instance 16 ... time taken: 8.5997 secs
+running test on instance 20 ... time taken: 9.42905 secs
+running test on instance 23 ... time taken: 5.72349 secs
+running test on instance 24 ... time taken: 8.34774 secs
+running test on instance 33 ... time taken: 8.4932 secs
+running test on instance 36 ... time taken: 11.39717 secs ---> instance solved (problem dim. = 0.8957639277204289)
+running test on instance 38 ... time taken: 3.1258 secs
+running test on instance 42 ... time taken: 9.45265 secs ---> instance solved (problem dim. = 0.8963210289985998)
+running test on instance 47 ... time taken: 11.90659 secs
+
+===============================================
+===============================================
+BKZ block dimension: 41 ; #solved instances: 39 ; #unsolved instances: 11 
+
+running test on instance 1 ... time taken: 14.08018 secs
+running test on instance 4 ... time taken: 16.65263 secs
+running test on instance 6 ... time taken: 17.42656 secs
+running test on instance 9 ... time taken: 19.03364 secs ---> instance solved (problem dim. = 0.7770844912459728)
+running test on instance 16 ... time taken: 19.86749 secs
+running test on instance 20 ... time taken: 8.40274 secs
+running test on instance 23 ... time taken: 7.97997 secs
+running test on instance 24 ... time taken: 16.46968 secs ---> instance solved (problem dim. = 0.863269735232088)
+running test on instance 33 ... time taken: 10.04296 secs ---> instance solved (problem dim. = 0.8458832676285024)
+running test on instance 38 ... time taken: 7.1266 secs
+running test on instance 47 ... time taken: 19.08426 secs
+
+===============================================
+===============================================
+BKZ block dimension: 42 ; #solved instances: 42 ; #unsolved instances: 8 
+
+running test on instance 1 ... time taken: 26.85264 secs ---> instance solved (problem dim. = 0.9049175938370334)
+running test on instance 4 ... time taken: 21.50758 secs
+running test on instance 6 ... time taken: 11.51903 secs
+running test on instance 16 ... time taken: 13.18541 secs ---> instance solved (problem dim. = 0.9046059491398349)
+running test on instance 20 ... time taken: 10.89317 secs
+running test on instance 23 ... time taken: 8.16673 secs
+running test on instance 38 ... time taken: 14.37529 secs
+running test on instance 47 ... time taken: 12.54207 secs
+
+===============================================
+===============================================
+BKZ block dimension: 43 ; #solved instances: 44 ; #unsolved instances: 6 
+
+running test on instance 4 ... time taken: 25.67215 secs ---> instance solved (problem dim. = 0.8356275772862715)
+running test on instance 6 ... time taken: 20.24558 secs ---> instance solved (problem dim. = 0.9165677125198559)
+running test on instance 20 ... time taken: 30.74336 secs ---> instance solved (problem dim. = 0.8712571361035081)
+running test on instance 23 ... time taken: 11.55548 secs
+running test on instance 38 ... time taken: 14.99128 secs
+running test on instance 47 ... time taken: 23.4421 secs ---> instance solved (problem dim. = 0.8403702144296766)
+
+===============================================
+===============================================
+BKZ block dimension: 44 ; #solved instances: 48 ; #unsolved instances: 2 
+
+running test on instance 23 ... time taken: 18.02085 secs ---> instance solved (problem dim. = 0.8634216372380097)
+running test on instance 38 ... time taken: 20.90112 secs ---> instance solved (problem dim. = 0.8422774793392394)
+
+===============================================
+
+Test suite ending at 11.06.2019, 07:23:50 
+
+Statistics:
+BKZ block size: 30 ; instances solved: 8 ; approx. time per success:  0.92634
+BKZ block size: 31 ; instances solved: 7 ; approx. time per success:  1.6552
+BKZ block size: 32 ; instances solved: 5 ; approx. time per success:  2.39199
+BKZ block size: 33 ; instances solved: 5 ; approx. time per success:  2.28679
+BKZ block size: 34 ; instances solved: 2 ; approx. time per success:  2.5229
+BKZ block size: 35 ; instances solved: 4 ; approx. time per success:  3.53986
+BKZ block size: 36 ; instances solved: 2 ; approx. time per success:  5.00171
+BKZ block size: 37 ; instances solved: 0 ; approx. time per success:  0
+BKZ block size: 38 ; instances solved: 1 ; approx. time per success:  5.8865
+BKZ block size: 39 ; instances solved: 3 ; approx. time per success:  10.26355
+BKZ block size: 40 ; instances solved: 2 ; approx. time per success:  10.42491
+BKZ block size: 41 ; instances solved: 3 ; approx. time per success:  15.18209
+BKZ block size: 42 ; instances solved: 2 ; approx. time per success:  20.01902
+BKZ block size: 43 ; instances solved: 4 ; approx. time per success:  25.0258
+BKZ block size: 44 ; instances solved: 2 ; approx. time per success:  19.46099
+
+Total running time of reduction algorithm(s): 0:22:47.137260
+Total running time of reduction algorithm(s) where we found solution: 353.73616999999996 seconds
+
+
+DIAGNOSTICS -> USE IT LATER
+[[30, 3, 0.98616, 0.7005830070719293], [30, 12, 0.83151, 0.6519318888849838], [30, 14, 0.69188, 0.6973781705218652], [30, 17, 0.80916, 0.6657292664880018], [30, 21, 0.95325, 0.656852003388089], [30, 25, 0.72147, 0.6812640225158447], [30, 29, 1.38396, 0.7082564750585103], [30, 46, 1.03334, 0.6646690964370354], [31, 5, 1.84208, 0.6527323925620623], [31, 10, 0.88543, 0.7556383000656055], [31, 19, 1.28764, 0.6996228996342131], [31, 28, 1.30455, 0.7501623183173692], [31, 32, 2.43098, 0.700259292530034], [31, 37, 2.06139, 0.7166089362430312], [31, 50, 1.77432, 0.725454970989476], [32, 8, 0.83316, 0.7165794209499652], [32, 22, 2.179, 0.6790254207139251], [32, 27, 1.80204, 0.755516870141985], [32, 30, 4.48395, 0.7407654538098806], [32, 43, 2.66181, 0.7061651536040763], [33, 2, 2.26527, 0.7684643285510859], [33, 13, 3.67478, 0.7361226258458985], [33, 26, 2.36091, 0.7880490337654671], [33, 31, 1.30027, 0.7652178708533247], [33, 40, 1.83272, 0.726634279715496], [34, 11, 1.96206, 0.7608438885122256], [34, 34, 3.08374, 0.7549888472143871], [35, 39, 2.6463, 0.7726964751482034], [35, 44, 2.4187, 0.7506007322350643], [35, 45, 3.92838, 0.7878850830425603], [35, 49, 5.16607, 0.8143040389716186], [36, 15, 4.12766, 0.8145874968405098], [36, 35, 5.87576, 0.7783114807776458], [38, 41, 5.8865, 0.831763534235102], [39, 7, 9.98221, 0.8682992871518314], [39, 18, 6.33037, 0.8828145213159833], [39, 48, 14.47808, 0.8487019495492979], [40, 36, 11.39717, 0.8957639277204289], [40, 42, 9.45265, 0.8963210289985998], [41, 9, 19.03364, 0.7770844912459728], [41, 24, 16.46968, 0.863269735232088], [41, 33, 10.04296, 0.8458832676285024], [42, 1, 26.85264, 0.9049175938370334], [42, 16, 13.18541, 0.9046059491398349], [43, 4, 25.67215, 0.8356275772862715], [43, 6, 20.24558, 0.9165677125198559], [43, 20, 30.74336, 0.8712571361035081], [43, 47, 23.4421, 0.8403702144296766], [44, 23, 18.02085, 0.8634216372380097], [44, 38, 20.90112, 0.8422774793392394]]
+[[30, 8, 0.92634], [31, 7, 1.6552], [32, 5, 2.39199], [33, 5, 2.28679], [34, 2, 2.5229], [35, 4, 3.53986], [36, 2, 5.00171], [37, 0, 0], [38, 1, 5.8865], [39, 3, 10.26355], [40, 2, 10.42491], [41, 3, 15.18209], [42, 2, 20.01902], [43, 4, 25.0258], [44, 2, 19.46099]]
+
+Script done on 2019-06-11 07:23:50+0200
