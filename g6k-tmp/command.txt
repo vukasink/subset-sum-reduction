@@ -1,0 +1,3 @@
+python bkz_vkc.py 140 --bkz/betas 30:40:1 --bkz/pre_beta 24 --bkz/tours 1 --workers 1 --bkz/alg naive --verbose --file_in 1_lattice > output.log
+
+script -c "python bkz_vkc.py 140 --bkz/betas 30:55:1 --bkz/pre_beta 24 --bkz/tours 1 --workers 1 --bkz/alg naive --verbose --file_in 10_lattice" -a test.txt
