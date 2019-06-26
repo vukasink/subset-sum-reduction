@@ -98,9 +98,7 @@ def bkz_kernel(arg0, params=None, seed=None):
 	if (file_in == None):
 		A, bkz = load_prebkz(d, s=challenge_seed, blocksize=pre_blocksize)
 	else:
-		print("file_in is NOT null")
 		A, bkz = load_matrix_file(file_in)
-		print("succesfully loaded matrix file")
 
 	print("\n\nA:")
 	print A
@@ -129,6 +127,7 @@ def bkz_kernel(arg0, params=None, seed=None):
 										   strategies=BKZ_FPYLLL.DEFAULT_STRATEGY,
 										   max_loops=1)
 					bkz(par)
+					print(bkz.A)
 
 				elif algbkz == "naive":
 					print("starting NAIVE")
