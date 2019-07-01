@@ -82,9 +82,10 @@ def bkz_kernel(arg0, params=None, seed=None):
 	blocksizes = eval("range(%s)" % re.sub(":", ",", blocksizes))
 	pre_blocksize = params.pop("bkz/pre_blocksize")
 	tours = params.pop("bkz/tours")
-	# XXX
+	# begin vukasink manipulation
 	file_in = params.pop("file_in")
-
+	solution_in = params.pop("solution_in")
+	# end vukasink manipulation
 	# misc
 	verbose = params.pop("verbose")
 	dont_trace = params.pop("dummy_tracer", False)
@@ -100,6 +101,18 @@ def bkz_kernel(arg0, params=None, seed=None):
 	else:
 		A, bkz = load_matrix_file(file_in)
 
+	if (solution_in):
+		f = open(solution_in, 'r')
+
+		line = f.readline()
+		line = f.readline()
+		line = line[1:-2]
+
+		b = line.split(', ')
+		solution = [ int(elem) for elem in b ]
+
+	print("solution:")
+	print(solution)
 	print("\n\nA:")
 	print A
 
@@ -118,16 +131,30 @@ def bkz_kernel(arg0, params=None, seed=None):
 	else:
 		M = g6k.M
 
+	must_break = False
+
 	T0 = time.time()
 	for blocksize in blocksizes:
+		if (must_break):
+			break
+
 		for t in range(tours):
 			with tracer.context("tour", t):
 				if algbkz == "fpylll":
+#					if blocksize <= 32:
+#						par = BKZ_FPYLLL.Param(blocksize,
+#										   strategies=None,
+#										   max_loops=1)
+#					else:
 					par = BKZ_FPYLLL.Param(blocksize,
-										   strategies=BKZ_FPYLLL.DEFAULT_STRATEGY,
-										   max_loops=1)
+									   strategies=BKZ_FPYLLL.DEFAULT_STRATEGY,
+									   max_loops=1)
 					bkz(par)
 					print(bkz.A)
+					if (check_solution(solution, bkz.A[0])):
+						print("XXXXXXXXX found it XXXXXXXXX")
+						must_break = True
+						break
 
 				elif algbkz == "naive":
 					print("starting NAIVE")
@@ -210,6 +237,19 @@ def bkz_tour():
 			fmt = "%48s :: n: %2d, cputime :%7.4fs, walltime :%7.4fs"
 			logging.info(fmt % (params, n, cputime, walltime))
 
+# begin vukasink manipulation
+def check_solution(solution, candidate):
+	n = len(solution)
+	if (candidate[n] != 0 or abs(candidate[n + 1]) != 1 or candidate[n + 2] != 0):
+		return False
+
+	for i in range(n):
+		c_i = abs(candidate[i] - candidate[n + 1]) // 2
+		if (c_i != solution[i]):
+			return False
+
+	return True
+# end vukasink manipulation
 
 if __name__ == '__main__':
 	bkz_tour()
