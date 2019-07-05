@@ -4,10 +4,10 @@ from statistics import mean, median
 from test import *
 from ssproblem import *
 
-NUM_INSTANCES = 50
-DIMENSION = 76
+NUM_INSTANCES = 25
+DIMENSION = 80
 STARTING_BLOCK_SIZE = 30
-PROBLEMS_PATH = "instances/dim_76/set_01/"
+PROBLEMS_PATH = "instances/dim_80/set_24/"
 
 def read_in_problems(path, first, last):
 	tests = []
@@ -61,7 +61,7 @@ def main():
 		avg_A_contributing = 0
 
 		problem = tests[i].ssproblem
-		
+
 		for j in range(DIMENSION):
 			A_total = A_total + problem.A[j]
 			A_contributing = A_contributing + (problem.A[j] if problem.E[j] == 1 else 0)
@@ -82,11 +82,20 @@ def main():
 
 	diagnostic = []
 	diagnostic_contr = []
+	diagnostic_parity = []
 
 	for i in range(NUM_INSTANCES):
 		problem = tests[i].ssproblem
-		
+
 		A_contr = [ problem.A[k] for k in range(DIMENSION) if problem.E[k] == 1 ]
+		
+		# count the number of (contributing) even/odd a_i's
+		even_elems = len([elem for elem in problem.A if elem % 2 == 0])
+		odd_elems = len(problem.A) - even_elems
+		even_elems_contr = len([elem for elem in A_contr if elem % 2 == 0])
+		odd_elems_contr = len(A_contr) - even_elems_contr
+		diagnostic_parity.append([i + 1, even_elems, odd_elems, even_elems_contr, odd_elems_contr])
+		print(diagnostic_parity[i], "; ", even_elems_contr, "; ", odd_elems_contr, ": ", len(A_contr))
 
 		# Statistic over whole A
 		A_mean = mean(problem.A)
@@ -144,7 +153,9 @@ def main():
 		max_absolute_median_deviation_contr, min_absolute_median_deviation_contr,
 		mean_absolute_deviation_contr, median_absolute_deviation_contr,
 		max(problem.A), problem.d])
-		
+
+	# sorted without any addition parameters sorts in _ascending_ order
+
 	print("\n***************")
 	print("sorted by mean absolute deviation")
 	print("***************\n")
@@ -176,11 +187,18 @@ def main():
 
 	sorted_density = sorted(diagnostic, key = lambda x: x[14], reverse = True)
 
+	
+
+	print("MeanAD | MeanAD c. | MXaMean | MNaMean | MXaMed | MXaMean c. | MNaMean c. | MXaMed c. | MXa_i |")
 	for i in range(NUM_INSTANCES):
-		print("%2d %2d %2d %2d %2d %2d %2d %2d %2d" % (sorted_MAD[i][0] + 1,
+		print("%4d   |  %4d     | %4d    |  %4d   |  %4d  |  %5d     |  %5d     |  %5d    | %4d  |" % (sorted_MAD[i][0] + 1,
 		sorted_MAD_contr[i][0] + 1, sorted_max_abs_mean[i][0] + 1, sorted_min_abs_mean[i][0] + 1,
 		sorted_max_abs_median[i][0] + 1, sorted_max_abs_mean_contr[i][0] + 1, sorted_min_abs_mean_contr[i][0] + 1,
 		sorted_max_abs_median_contr[i][0] + 1, sorted_max_A[i][0] + 1))
+
+	print("\nsorted by density")
+	for i in range(NUM_INSTANCES):
+		print("%5d" % (sorted_density[i][0] + 1))
 
 if __name__ == "__main__":
     main()
