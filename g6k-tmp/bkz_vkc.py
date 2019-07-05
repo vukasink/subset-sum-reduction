@@ -79,13 +79,24 @@ def bkz_kernel(arg0, params=None, seed=None):
 	# flow of the bkz experiment
 	algbkz = params.pop("bkz/alg")
 	blocksizes = params.pop("bkz/blocksizes")
+	print("XXX %s" % blocksizes)
 	blocksizes = eval("range(%s)" % re.sub(":", ",", blocksizes))
 	pre_blocksize = params.pop("bkz/pre_blocksize")
 	tours = params.pop("bkz/tours")
+
 	# begin vukasink manipulation
+	basic_blocksizes = params.pop("bkz/basic_blocksizes")
+	basic_blocksizes = parse_blocksizes(basic_blocksizes)
+	print(basic_blocksizes)
+
+	pruning_blocksizes = params.pop("bkz/pruning_blocksizes")
+	pruning_blocksizes = parse_blocksizes(pruning_blocksizes)
+	print(pruning_blocksizes)
+
 	file_in = params.pop("file_in")
 	solution_in = params.pop("solution_in")
 	# end vukasink manipulation
+
 	# misc
 	verbose = params.pop("verbose")
 	dont_trace = params.pop("dummy_tracer", False)
@@ -238,6 +249,14 @@ def bkz_tour():
 			logging.info(fmt % (params, n, cputime, walltime))
 
 # begin vukasink manipulation
+def parse_blocksizes(blocksizes):
+	if ":" in blocksizes:
+		return eval("range(%s)" % re.sub(":", ",", blocksizes))
+	# else suppose the format is x1.x2.x3... ->
+	# that represents exactly the list of single betas
+	else:
+		return eval("[%s]" % re.sub("\.", ",", blocksizes))
+
 def check_solution(solution, candidate):
 	n = len(solution)
 	if (candidate[n] != 0 or abs(candidate[n + 1]) != 1 or candidate[n + 2] != 0):
