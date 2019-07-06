@@ -55,6 +55,8 @@ def main():
 
 	res_obj.update({"results": []})
 
+	# we'll run run_g6k.py in parallel, so name the tmp filename different
+	# in each run so that we avoid possible read/write conflicts
 	tmp_filename = "g6k_run_tmp" + str(dimension) + str(N) + reduction_strategy
 	
 	# info_arr_1 = [ (instance_num, beta, time, slope) ]
