@@ -85,7 +85,7 @@ def main():
 		walltime = json_str["walltime"]
 		beta = json_str["beta"]
 
-		total_runing_time = total_running_time + walltime
+		total_running_time = total_running_time + walltime
 		# running time of problems that were solved
 		if (beta > 0):
 			succ_running_time = succ_running_time + walltime
