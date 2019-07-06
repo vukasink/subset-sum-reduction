@@ -71,8 +71,8 @@ def naive_bkz_tour(g6k, tracer, blocksize, dim4free_fun=default_dim4free_fun,
 		g6k.lll(0, d)
 
 	# XXX
-	print("final reduced basis:")
-	print g6k.M.B
+#	print("final reduced basis:")
+#	print g6k.M.B
 
 def pump_n_jump_bkz_tour(g6k, tracer, blocksize, jump=1,
 		dim4free_fun=default_dim4free_fun, extra_dim4free=0,

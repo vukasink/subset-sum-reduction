@@ -7,6 +7,7 @@ BKZ Command Line Client
 import logging
 import re
 import time
+import json
 
 from collections import OrderedDict
 
@@ -79,19 +80,28 @@ def bkz_kernel(arg0, params=None, seed=None):
 	# flow of the bkz experiment
 	algbkz = params.pop("bkz/alg")
 	blocksizes = params.pop("bkz/blocksizes")
-	print("XXX %s" % blocksizes)
 	blocksizes = eval("range(%s)" % re.sub(":", ",", blocksizes))
+	blocksizes = [ (elem, 1) for elem in blocksizes ]
 	pre_blocksize = params.pop("bkz/pre_blocksize")
 	tours = params.pop("bkz/tours")
 
 	# begin vukasink manipulation
 	basic_blocksizes = params.pop("bkz/basic_blocksizes")
-	basic_blocksizes = parse_blocksizes(basic_blocksizes)
-	print(basic_blocksizes)
+	if (not basic_blocksizes == None):
+		basic_blocksizes = parse_blocksizes(basic_blocksizes)
+		basic_blocksizes = [ (elem, 0) for elem in basic_blocksizes ]
+		#print(basic_blocksizes)
 
 	pruning_blocksizes = params.pop("bkz/pruning_blocksizes")
-	pruning_blocksizes = parse_blocksizes(pruning_blocksizes)
-	print(pruning_blocksizes)
+	if (not pruning_blocksizes == None):
+		pruning_blocksizes = parse_blocksizes(pruning_blocksizes)
+		pruning_blocksizes = [ (elem, 1) for elem in pruning_blocksizes ]
+		#print(pruning_blocksizes)
+
+	if ((not basic_blocksizes == None) or (not pruning_blocksizes == None)):
+		blocksizes = ([] if basic_blocksizes == None else basic_blocksizes) + ([] if pruning_blocksizes == None else pruning_blocksizes)
+
+	#print(blocksizes)
 
 	file_in = params.pop("file_in")
 	solution_in = params.pop("solution_in")
@@ -101,19 +111,24 @@ def bkz_kernel(arg0, params=None, seed=None):
 	verbose = params.pop("verbose")
 	dont_trace = params.pop("dummy_tracer", False)
 
-	if blocksizes[-1] > d:
-		print 'set a smaller maximum blocksize with --blocksizes'
-		return
+#	if blocksizes[-1] > d:
+#		print 'set a smaller maximum blocksize with --blocksizes'
+#		return
 
 	challenge_seed = params.pop("challenge_seed")
+
 
 	if (file_in == None):
 		A, bkz = load_prebkz(d, s=challenge_seed, blocksize=pre_blocksize)
 	else:
 		A, bkz = load_matrix_file(file_in)
 
-	if (solution_in):
-		f = open(solution_in, 'r')
+	if (not solution_in == None):
+		solution_in_num = solution_in.find("/")
+		solution_in_num = solution_in.find("/", solution_in_num + 1)
+		solution_in_num = solution_in[solution_in_num + 1:]
+
+		f = open(str(solution_in), 'r')
 
 		line = f.readline()
 		line = f.readline()
@@ -122,10 +137,8 @@ def bkz_kernel(arg0, params=None, seed=None):
 		b = line.split(', ')
 		solution = [ int(elem) for elem in b ]
 
-	print("solution:")
-	print(solution)
-	print("\n\nA:")
-	print A
+	#print("solution:")
+	#print(solution)
 
 	MM = GSO.Mat(A, float_type="double",
 				 U=IntegerMatrix.identity(A.nrows, int_type=A.int_type),
@@ -143,27 +156,34 @@ def bkz_kernel(arg0, params=None, seed=None):
 		M = g6k.M
 
 	must_break = False
+	json_obj = {}
 
 	T0 = time.time()
-	for blocksize in blocksizes:
+	for blocksize_pair in blocksizes:
+		blocksize = blocksize_pair[0]
+		pruning_active = blocksize_pair[1]
+		#print("beta %d %s pruning" % (blocksize, "WITH" if pruning_active == 1 else "WITHOUT"))
 		if (must_break):
 			break
 
 		for t in range(tours):
 			with tracer.context("tour", t):
 				if algbkz == "fpylll":
-#					if blocksize <= 32:
-#						par = BKZ_FPYLLL.Param(blocksize,
-#										   strategies=None,
-#										   max_loops=1)
-#					else:
-					par = BKZ_FPYLLL.Param(blocksize,
-									   strategies=BKZ_FPYLLL.DEFAULT_STRATEGY,
-									   max_loops=1)
+					if pruning_active == 0:
+						par = BKZ_FPYLLL.Param(blocksize,
+											strategies=None,
+											max_loops=1)
+					else:
+						par = BKZ_FPYLLL.Param(blocksize,
+										strategies=BKZ_FPYLLL.DEFAULT_STRATEGY,
+										max_loops=1)
 					bkz(par)
-					print(bkz.A)
+					#print(bkz.A)
 					if (check_solution(solution, bkz.A[0])):
-						print("XXXXXXXXX found it XXXXXXXXX")
+						total_time = round(time.time() - T0, 3)
+						slope_final = round(basis_quality(M)["/"], 6)
+						json_obj = { "instance": int(solution_in_num), "beta": blocksize, "walltime": total_time, "slope": slope_final }
+						#print("XXXXXXXXX found it XXXXXXXXX")
 						must_break = True
 						break
 
@@ -190,7 +210,9 @@ def bkz_kernel(arg0, params=None, seed=None):
 				print fmt % (algbkz + "+" + ("enum" if algbkz == "fpylll" else g6k.params.default_sieve),
 							 jump, pump_params["down_sieve"], extra_dim4free,
 							 blocksize, slope, time.time() - T0)
-
+	#print(time.time() - T0)
+	print(json.dumps(json_obj))
+	
 	tracer.exit()
 	try:
 		return tracer.trace
