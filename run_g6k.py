@@ -21,6 +21,7 @@ def main():
 
 	res_obj = {}
 	num_instances = LAST_P - FIRST_P + 1
+	solved_instances = 0
 
 	# 1. argument = "CA" or "Schnorr" or ...
 	lattice_version = sys.argv[1]
@@ -83,23 +84,11 @@ def main():
 		json_str = json.load(f)
 		f.close()
 		
-		walltime = json_str["walltime"]
-		#print(walltime)
-
-		total_running_time = total_running_time + walltime
 		info_arr_1.append((json_str["instance"], json_str["beta"], walltime, json_str["slope"]))
-		
 
 		res_obj_tmp = res_obj['results']
 		res_obj_tmp.append(json_str)
-		#print(res_obj_tmp)
 		res_obj['results'] = res_obj_tmp
-
-		#print(json_str["instance"])
-
-	#print("XXXXXXXXXXXXXXXx")
-	#print(info_arr_1)
-	#print("XXXXXXXXXXXXXXX")
 
 	res_obj.update({"total_running_time": total_running_time})
 	avg_running_time = total_running_time / num_instances

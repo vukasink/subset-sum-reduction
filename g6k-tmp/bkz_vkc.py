@@ -210,6 +210,11 @@ def bkz_kernel(arg0, params=None, seed=None):
 				print fmt % (algbkz + "+" + ("enum" if algbkz == "fpylll" else g6k.params.default_sieve),
 							 jump, pump_params["down_sieve"], extra_dim4free,
 							 blocksize, slope, time.time() - T0)
+
+	# if we haven't found solution, output "dummy" tuple
+	if (not must_break):
+		json_obj = { "instance": int(solution_in_num), "beta": 0, "walltime": 0, "slope": round(basis_quality(M)["/"], 6) }
+
 	#print(time.time() - T0)
 	print(json.dumps(json_obj))
 	
