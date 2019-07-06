@@ -8,7 +8,7 @@ from test import *
 from ssproblem import *
 
 FIRST_P = 1
-LAST_P = 9
+LAST_P = 300
 
 def main():
 	print("***********************************************")
@@ -56,6 +56,8 @@ def main():
 
 	res_obj.update({"results": []})
 
+	tmp_filename = "g6k_run_tmp" + str(dimension) + str(N) + reduction_strategy
+	
 	# info_arr_1 = [ (instance_num, beta, time, slope) ]
 	info_arr_1 = []
 
@@ -72,12 +74,12 @@ def main():
 		#print(blocksizes_option)
 		
 		cmd_g6k = "../g6k/bkz_vkc.py 100" + dummy_options + alg_option + file_in_option + solution_in + blocksizes_option if reduction_strategy == "fpylll" else ""
-		cmd_whole = cmd_g6k + " > g6k_run_tmp.txt"
-		print(cmd_whole)
+		cmd_whole = cmd_g6k + " > " + tmp_filename
+		#print(cmd_whole)
 
 		subprocess.call(cmd_whole, shell=True)
 		
-		f = open("g6k_run_tmp.txt", 'r')
+		f = open(tmp_filename, 'r')
 		json_str = json.load(f)
 		f.close()
 		
