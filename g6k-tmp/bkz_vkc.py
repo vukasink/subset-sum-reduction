@@ -213,7 +213,7 @@ def bkz_kernel(arg0, params=None, seed=None):
 
 	# if we haven't found solution, output "dummy" tuple
 	if (not must_break):
-		json_obj = { "instance": int(solution_in_num), "beta": 0, "walltime": 0, "slope": round(basis_quality(M)["/"], 6) }
+		json_obj = { "instance": int(solution_in_num), "beta": 0, "walltime": round(time.time() - T0, 3), "slope": round(basis_quality(M)["/"], 6) }
 
 	#print(time.time() - T0)
 	print(json.dumps(json_obj))

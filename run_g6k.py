@@ -44,11 +44,9 @@ def main():
 	res_obj.update({"pruning_betas": pruning_blocksizes})
 	
 	total_running_time = 0
+	succ_running_time = 0
 	# average running time per problem
 	avg_running_time = 0
-	# average running time per problem if we discard results
-	# of X slowest/fastest tests
-	opt_avg_running_time = 0
 
 	instances_path = "instances/n_" + str(dimension) + "/"
 	#print(instances_path)
@@ -83,16 +81,26 @@ def main():
 		f = open(tmp_filename, 'r')
 		json_str = json.load(f)
 		f.close()
-		
-		info_arr_1.append((json_str["instance"], json_str["beta"], walltime, json_str["slope"]))
+
+		walltime = json_str["walltime"]
+		beta = json_str["beta"]
+
+		total_runing_time = total_running_time + walltime
+		# running time of problems that were solved
+		if (beta > 0):
+			succ_running_time = succ_running_time + walltime
+			solved_instances = solved_instances + 1
+
+		info_arr_1.append((json_str["instance"], beta, walltime, json_str["slope"]))
 
 		res_obj_tmp = res_obj['results']
 		res_obj_tmp.append(json_str)
 		res_obj['results'] = res_obj_tmp
 
+	res_obj.update({"succ_running_time": succ_running_time})
+	avg_succ_running_time = succ_running_time / solved_instances
+	res_obj.update({"avg_runtime_per_succ_problem": avg_succ_running_time})
 	res_obj.update({"total_running_time": total_running_time})
-	avg_running_time = total_running_time / num_instances
-	res_obj.update({"avg_runtime_per_problem": avg_running_time})
 	# write final result to json file
 	hash_obj = hashlib.sha1(cmd_g6k.encode())
 	filename = "result_n_" + str(dimension) + "_N_" + str(N) + "_" + reduction_strategy + "_" + hash_obj.hexdigest()[0:6] + ".json" 
