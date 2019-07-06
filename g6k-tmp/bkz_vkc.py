@@ -137,6 +137,11 @@ def bkz_kernel(arg0, params=None, seed=None):
 		b = line.split(', ')
 		solution = [ int(elem) for elem in b ]
 
+		# there's no point in having beta > than problem_dim + 1
+		# because that's the size of basis of our lattice.
+		problem_dim = len(solution)
+		blocksizes = [ elem for elem in blocksizes if elem[0] <= (problem_dim + 1) ]
+
 	#print("solution:")
 	#print(solution)
 

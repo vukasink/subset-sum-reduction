@@ -97,10 +97,10 @@ def main():
 		res_obj_tmp.append(json_str)
 		res_obj['results'] = res_obj_tmp
 
-	res_obj.update({"succ_running_time": succ_running_time})
-	avg_succ_running_time = succ_running_time / solved_instances
+	res_obj.update({"succ_running_time": round(succ_running_time, 3)})
+	avg_succ_running_time = round(succ_running_time / solved_instances, 3)
 	res_obj.update({"avg_runtime_per_succ_problem": avg_succ_running_time})
-	res_obj.update({"total_running_time": total_running_time})
+	res_obj.update({"total_running_time": round(total_running_time, 3)})
 	# write final result to json file
 	hash_obj = hashlib.sha1(cmd_g6k.encode())
 	filename = "result_n_" + str(dimension) + "_N_" + str(N) + "_" + reduction_strategy + "_" + hash_obj.hexdigest()[0:6] + ".json" 
