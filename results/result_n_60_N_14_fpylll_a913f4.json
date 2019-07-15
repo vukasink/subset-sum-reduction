@@ -1,0 +1,1814 @@
+{
+    "lattice_version": "Schnorr", 
+    "non_pruning_betas": "0", 
+    "N": "14", 
+    "reduction_strategy": "fpylll", 
+    "total_running_time": 3126.836, 
+    "num_instances": 300, 
+    "results": [
+        {
+            "beta": 44, 
+            "slope": -0.040333, 
+            "walltime": 7.894, 
+            "instance": 1
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.038956, 
+            "walltime": 12.759, 
+            "instance": 2
+        }, 
+        {
+            "beta": 38, 
+            "slope": -0.041085, 
+            "walltime": 6.389, 
+            "instance": 3
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039131, 
+            "walltime": 11.888, 
+            "instance": 4
+        }, 
+        {
+            "beta": 29, 
+            "slope": -0.041504, 
+            "walltime": 4.668, 
+            "instance": 5
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040943, 
+            "walltime": 6.92, 
+            "instance": 6
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039437, 
+            "walltime": 11.826, 
+            "instance": 7
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040795, 
+            "walltime": 9.632, 
+            "instance": 8
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.039954, 
+            "walltime": 6.15, 
+            "instance": 9
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.03896, 
+            "walltime": 11.37, 
+            "instance": 10
+        }, 
+        {
+            "beta": 36, 
+            "slope": -0.040987, 
+            "walltime": 5.924, 
+            "instance": 11
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.038946, 
+            "walltime": 22.221, 
+            "instance": 12
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.041428, 
+            "walltime": 6.557, 
+            "instance": 13
+        }, 
+        {
+            "beta": 36, 
+            "slope": -0.041624, 
+            "walltime": 5.925, 
+            "instance": 14
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039629, 
+            "walltime": 10.533, 
+            "instance": 15
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040143, 
+            "walltime": 7.893, 
+            "instance": 16
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.039959, 
+            "walltime": 7.166, 
+            "instance": 17
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039624, 
+            "walltime": 15.192, 
+            "instance": 18
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039598, 
+            "walltime": 10.728, 
+            "instance": 19
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039966, 
+            "walltime": 12.761, 
+            "instance": 20
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040006, 
+            "walltime": 7.546, 
+            "instance": 21
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.040038, 
+            "walltime": 10.731, 
+            "instance": 22
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039824, 
+            "walltime": 7.744, 
+            "instance": 23
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039219, 
+            "walltime": 14.39, 
+            "instance": 24
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039795, 
+            "walltime": 9.418, 
+            "instance": 25
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.039321, 
+            "walltime": 21.493, 
+            "instance": 26
+        }, 
+        {
+            "beta": 56, 
+            "slope": -0.038618, 
+            "walltime": 23.45, 
+            "instance": 27
+        }, 
+        {
+            "beta": 31, 
+            "slope": -0.041071, 
+            "walltime": 5.059, 
+            "instance": 28
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.039571, 
+            "walltime": 13.913, 
+            "instance": 29
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.040007, 
+            "walltime": 7.169, 
+            "instance": 30
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.03843, 
+            "walltime": 15.81, 
+            "instance": 31
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039923, 
+            "walltime": 10.682, 
+            "instance": 32
+        }, 
+        {
+            "beta": 32, 
+            "slope": -0.041665, 
+            "walltime": 5.156, 
+            "instance": 33
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.04007, 
+            "walltime": 9.476, 
+            "instance": 34
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.038969, 
+            "walltime": 20.817, 
+            "instance": 35
+        }, 
+        {
+            "beta": 28, 
+            "slope": -0.04325, 
+            "walltime": 4.412, 
+            "instance": 36
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039619, 
+            "walltime": 10.521, 
+            "instance": 37
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.039163, 
+            "walltime": 20.998, 
+            "instance": 38
+        }, 
+        {
+            "beta": 25, 
+            "slope": -0.043121, 
+            "walltime": 4.023, 
+            "instance": 39
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040454, 
+            "walltime": 6.892, 
+            "instance": 40
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040327, 
+            "walltime": 7.05, 
+            "instance": 41
+        }, 
+        {
+            "beta": 54, 
+            "slope": -0.039522, 
+            "walltime": 19.605, 
+            "instance": 42
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039655, 
+            "walltime": 13.241, 
+            "instance": 43
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040641, 
+            "walltime": 7.496, 
+            "instance": 44
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.04029, 
+            "walltime": 7.69, 
+            "instance": 45
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040403, 
+            "walltime": 9.76, 
+            "instance": 46
+        }, 
+        {
+            "beta": 33, 
+            "slope": -0.041866, 
+            "walltime": 5.371, 
+            "instance": 47
+        }, 
+        {
+            "beta": 27, 
+            "slope": -0.041665, 
+            "walltime": 4.286, 
+            "instance": 48
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040489, 
+            "walltime": 6.96, 
+            "instance": 49
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.038871, 
+            "walltime": 15.788, 
+            "instance": 50
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.040053, 
+            "walltime": 8.538, 
+            "instance": 51
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039041, 
+            "walltime": 14.597, 
+            "instance": 52
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039743, 
+            "walltime": 11.184, 
+            "instance": 53
+        }, 
+        {
+            "beta": 54, 
+            "slope": -0.039838, 
+            "walltime": 19.352, 
+            "instance": 54
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040768, 
+            "walltime": 7.43, 
+            "instance": 55
+        }, 
+        {
+            "beta": 54, 
+            "slope": -0.039015, 
+            "walltime": 18.716, 
+            "instance": 56
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.039737, 
+            "walltime": 14.19, 
+            "instance": 57
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040575, 
+            "walltime": 9.781, 
+            "instance": 58
+        }, 
+        {
+            "beta": 57, 
+            "slope": -0.039572, 
+            "walltime": 26.874, 
+            "instance": 59
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039748, 
+            "walltime": 8.659, 
+            "instance": 60
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040024, 
+            "walltime": 7.618, 
+            "instance": 61
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039527, 
+            "walltime": 10.379, 
+            "instance": 62
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039573, 
+            "walltime": 11.744, 
+            "instance": 63
+        }, 
+        {
+            "beta": 27, 
+            "slope": -0.042398, 
+            "walltime": 4.261, 
+            "instance": 64
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.040396, 
+            "walltime": 10.769, 
+            "instance": 65
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039407, 
+            "walltime": 15.425, 
+            "instance": 66
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040454, 
+            "walltime": 9.683, 
+            "instance": 67
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040216, 
+            "walltime": 7.629, 
+            "instance": 68
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040668, 
+            "walltime": 7.108, 
+            "instance": 69
+        }, 
+        {
+            "beta": 30, 
+            "slope": -0.041188, 
+            "walltime": 4.828, 
+            "instance": 70
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039798, 
+            "walltime": 12.858, 
+            "instance": 71
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.041492, 
+            "walltime": 6.558, 
+            "instance": 72
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.039865, 
+            "walltime": 7.02, 
+            "instance": 73
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.040275, 
+            "walltime": 8.663, 
+            "instance": 74
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039751, 
+            "walltime": 15.342, 
+            "instance": 75
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.040236, 
+            "walltime": 6.729, 
+            "instance": 76
+        }, 
+        {
+            "beta": 25, 
+            "slope": -0.044103, 
+            "walltime": 3.95, 
+            "instance": 77
+        }, 
+        {
+            "beta": 35, 
+            "slope": -0.041679, 
+            "walltime": 5.742, 
+            "instance": 78
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.040249, 
+            "walltime": 6.529, 
+            "instance": 79
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.039778, 
+            "walltime": 6.76, 
+            "instance": 80
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039065, 
+            "walltime": 8.517, 
+            "instance": 81
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.039317, 
+            "walltime": 20.483, 
+            "instance": 82
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.040731, 
+            "walltime": 8.568, 
+            "instance": 83
+        }, 
+        {
+            "beta": 53, 
+            "slope": -0.039247, 
+            "walltime": 18.251, 
+            "instance": 84
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.03981, 
+            "walltime": 10.556, 
+            "instance": 85
+        }, 
+        {
+            "beta": 29, 
+            "slope": -0.042251, 
+            "walltime": 4.766, 
+            "instance": 86
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.038809, 
+            "walltime": 10.731, 
+            "instance": 87
+        }, 
+        {
+            "beta": 31, 
+            "slope": -0.041498, 
+            "walltime": 5.0, 
+            "instance": 88
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.03991, 
+            "walltime": 11.687, 
+            "instance": 89
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040141, 
+            "walltime": 7.58, 
+            "instance": 90
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.040284, 
+            "walltime": 6.776, 
+            "instance": 91
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.041147, 
+            "walltime": 6.91, 
+            "instance": 92
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039828, 
+            "walltime": 9.537, 
+            "instance": 93
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039172, 
+            "walltime": 11.322, 
+            "instance": 94
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039513, 
+            "walltime": 10.833, 
+            "instance": 95
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040059, 
+            "walltime": 6.919, 
+            "instance": 96
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.038734, 
+            "walltime": 30.554, 
+            "instance": 97
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039708, 
+            "walltime": 10.493, 
+            "instance": 98
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039907, 
+            "walltime": 7.791, 
+            "instance": 99
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040832, 
+            "walltime": 9.892, 
+            "instance": 100
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040395, 
+            "walltime": 7.84, 
+            "instance": 101
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040095, 
+            "walltime": 7.763, 
+            "instance": 102
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.039295, 
+            "walltime": 20.288, 
+            "instance": 103
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.039793, 
+            "walltime": 6.77, 
+            "instance": 104
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039509, 
+            "walltime": 9.663, 
+            "instance": 105
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039155, 
+            "walltime": 11.431, 
+            "instance": 106
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039887, 
+            "walltime": 9.503, 
+            "instance": 107
+        }, 
+        {
+            "beta": 31, 
+            "slope": -0.041717, 
+            "walltime": 5.041, 
+            "instance": 108
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.039446, 
+            "walltime": 7.149, 
+            "instance": 109
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.041013, 
+            "walltime": 7.526, 
+            "instance": 110
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.04014, 
+            "walltime": 9.642, 
+            "instance": 111
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.03956, 
+            "walltime": 10.328, 
+            "instance": 112
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.041466, 
+            "walltime": 6.936, 
+            "instance": 113
+        }, 
+        {
+            "beta": 28, 
+            "slope": -0.04273, 
+            "walltime": 4.464, 
+            "instance": 114
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040669, 
+            "walltime": 7.564, 
+            "instance": 115
+        }, 
+        {
+            "beta": 33, 
+            "slope": -0.040005, 
+            "walltime": 5.434, 
+            "instance": 116
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.040438, 
+            "walltime": 6.099, 
+            "instance": 117
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039989, 
+            "walltime": 9.666, 
+            "instance": 118
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039556, 
+            "walltime": 11.721, 
+            "instance": 119
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.040424, 
+            "walltime": 11.315, 
+            "instance": 120
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040309, 
+            "walltime": 7.032, 
+            "instance": 121
+        }, 
+        {
+            "beta": 38, 
+            "slope": -0.040685, 
+            "walltime": 6.382, 
+            "instance": 122
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039866, 
+            "walltime": 10.506, 
+            "instance": 123
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039238, 
+            "walltime": 8.465, 
+            "instance": 124
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.039931, 
+            "walltime": 6.983, 
+            "instance": 125
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039812, 
+            "walltime": 9.759, 
+            "instance": 126
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.04013, 
+            "walltime": 8.921, 
+            "instance": 127
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.038095, 
+            "walltime": 30.67, 
+            "instance": 128
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039747, 
+            "walltime": 13.333, 
+            "instance": 129
+        }, 
+        {
+            "beta": 22, 
+            "slope": -0.044104, 
+            "walltime": 3.432, 
+            "instance": 130
+        }, 
+        {
+            "beta": 54, 
+            "slope": -0.038974, 
+            "walltime": 18.826, 
+            "instance": 131
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.038774, 
+            "walltime": 15.288, 
+            "instance": 132
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040924, 
+            "walltime": 7.752, 
+            "instance": 133
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.038339, 
+            "walltime": 13.539, 
+            "instance": 134
+        }, 
+        {
+            "beta": 57, 
+            "slope": -0.039635, 
+            "walltime": 26.73, 
+            "instance": 135
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039022, 
+            "walltime": 15.346, 
+            "instance": 136
+        }, 
+        {
+            "beta": 28, 
+            "slope": -0.041562, 
+            "walltime": 4.45, 
+            "instance": 137
+        }, 
+        {
+            "beta": 32, 
+            "slope": -0.041991, 
+            "walltime": 5.236, 
+            "instance": 138
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.03957, 
+            "walltime": 14.99, 
+            "instance": 139
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040071, 
+            "walltime": 7.467, 
+            "instance": 140
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.03978, 
+            "walltime": 7.595, 
+            "instance": 141
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.040295, 
+            "walltime": 6.477, 
+            "instance": 142
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039362, 
+            "walltime": 9.521, 
+            "instance": 143
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.040167, 
+            "walltime": 6.236, 
+            "instance": 144
+        }, 
+        {
+            "beta": 38, 
+            "slope": -0.040225, 
+            "walltime": 6.301, 
+            "instance": 145
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039678, 
+            "walltime": 7.752, 
+            "instance": 146
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.039744, 
+            "walltime": 7.326, 
+            "instance": 147
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039378, 
+            "walltime": 10.652, 
+            "instance": 148
+        }, 
+        {
+            "beta": 31, 
+            "slope": -0.041206, 
+            "walltime": 4.993, 
+            "instance": 149
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039855, 
+            "walltime": 11.911, 
+            "instance": 150
+        }, 
+        {
+            "beta": 56, 
+            "slope": -0.039373, 
+            "walltime": 24.047, 
+            "instance": 151
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.038782, 
+            "walltime": 6.161, 
+            "instance": 152
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039542, 
+            "walltime": 7.685, 
+            "instance": 153
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.038952, 
+            "walltime": 16.734, 
+            "instance": 154
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.039742, 
+            "walltime": 6.963, 
+            "instance": 155
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040518, 
+            "walltime": 7.723, 
+            "instance": 156
+        }, 
+        {
+            "beta": 23, 
+            "slope": -0.043659, 
+            "walltime": 3.621, 
+            "instance": 157
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.039071, 
+            "walltime": 7.09, 
+            "instance": 158
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040357, 
+            "walltime": 7.58, 
+            "instance": 159
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039629, 
+            "walltime": 14.98, 
+            "instance": 160
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.040203, 
+            "walltime": 8.7, 
+            "instance": 161
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039846, 
+            "walltime": 10.701, 
+            "instance": 162
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.040175, 
+            "walltime": 7.161, 
+            "instance": 163
+        }, 
+        {
+            "beta": 33, 
+            "slope": -0.041836, 
+            "walltime": 5.414, 
+            "instance": 164
+        }, 
+        {
+            "beta": 27, 
+            "slope": -0.042587, 
+            "walltime": 4.377, 
+            "instance": 165
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039487, 
+            "walltime": 12.616, 
+            "instance": 166
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.040274, 
+            "walltime": 10.716, 
+            "instance": 167
+        }, 
+        {
+            "beta": 34, 
+            "slope": -0.041614, 
+            "walltime": 5.551, 
+            "instance": 168
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039783, 
+            "walltime": 11.674, 
+            "instance": 169
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039348, 
+            "walltime": 10.908, 
+            "instance": 170
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.040099, 
+            "walltime": 6.716, 
+            "instance": 171
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039981, 
+            "walltime": 7.696, 
+            "instance": 172
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040102, 
+            "walltime": 7.923, 
+            "instance": 173
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.038838, 
+            "walltime": 7.835, 
+            "instance": 174
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.038957, 
+            "walltime": 13.852, 
+            "instance": 175
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039464, 
+            "walltime": 8.589, 
+            "instance": 176
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.039231, 
+            "walltime": 16.613, 
+            "instance": 177
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.040971, 
+            "walltime": 7.362, 
+            "instance": 178
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039317, 
+            "walltime": 9.742, 
+            "instance": 179
+        }, 
+        {
+            "beta": 55, 
+            "slope": -0.038824, 
+            "walltime": 21.425, 
+            "instance": 180
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039393, 
+            "walltime": 15.266, 
+            "instance": 181
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.040333, 
+            "walltime": 6.47, 
+            "instance": 182
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.03969, 
+            "walltime": 7.973, 
+            "instance": 183
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039003, 
+            "walltime": 12.69, 
+            "instance": 184
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.040078, 
+            "walltime": 7.196, 
+            "instance": 185
+        }, 
+        {
+            "beta": 36, 
+            "slope": -0.041052, 
+            "walltime": 5.976, 
+            "instance": 186
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.038615, 
+            "walltime": 36.518, 
+            "instance": 187
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039785, 
+            "walltime": 10.648, 
+            "instance": 188
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039005, 
+            "walltime": 10.751, 
+            "instance": 189
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.040005, 
+            "walltime": 11.957, 
+            "instance": 190
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040264, 
+            "walltime": 7.678, 
+            "instance": 191
+        }, 
+        {
+            "beta": 54, 
+            "slope": -0.040565, 
+            "walltime": 19.9, 
+            "instance": 192
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.039813, 
+            "walltime": 17.068, 
+            "instance": 193
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039996, 
+            "walltime": 11.658, 
+            "instance": 194
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039576, 
+            "walltime": 13.352, 
+            "instance": 195
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.040826, 
+            "walltime": 6.584, 
+            "instance": 196
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.039799, 
+            "walltime": 6.942, 
+            "instance": 197
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039263, 
+            "walltime": 12.318, 
+            "instance": 198
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.041482, 
+            "walltime": 6.174, 
+            "instance": 199
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.04023, 
+            "walltime": 8.644, 
+            "instance": 200
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039452, 
+            "walltime": 7.716, 
+            "instance": 201
+        }, 
+        {
+            "beta": 28, 
+            "slope": -0.043236, 
+            "walltime": 4.483, 
+            "instance": 202
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039778, 
+            "walltime": 15.088, 
+            "instance": 203
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.040626, 
+            "walltime": 6.693, 
+            "instance": 204
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.039229, 
+            "walltime": 35.913, 
+            "instance": 205
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.03908, 
+            "walltime": 15.064, 
+            "instance": 206
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040313, 
+            "walltime": 7.757, 
+            "instance": 207
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.038928, 
+            "walltime": 14.048, 
+            "instance": 208
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040423, 
+            "walltime": 7.493, 
+            "instance": 209
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.040279, 
+            "walltime": 11.501, 
+            "instance": 210
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.040349, 
+            "walltime": 6.293, 
+            "instance": 211
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.041531, 
+            "walltime": 6.223, 
+            "instance": 212
+        }, 
+        {
+            "beta": 32, 
+            "slope": -0.041342, 
+            "walltime": 5.182, 
+            "instance": 213
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.040903, 
+            "walltime": 6.594, 
+            "instance": 214
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.041858, 
+            "walltime": 6.748, 
+            "instance": 215
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039848, 
+            "walltime": 13.062, 
+            "instance": 216
+        }, 
+        {
+            "beta": 34, 
+            "slope": -0.040002, 
+            "walltime": 5.49, 
+            "instance": 217
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.041257, 
+            "walltime": 7.445, 
+            "instance": 218
+        }, 
+        {
+            "beta": 38, 
+            "slope": -0.041034, 
+            "walltime": 6.413, 
+            "instance": 219
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.039064, 
+            "walltime": 28.797, 
+            "instance": 220
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.040019, 
+            "walltime": 14.843, 
+            "instance": 221
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039268, 
+            "walltime": 12.973, 
+            "instance": 222
+        }, 
+        {
+            "beta": 32, 
+            "slope": -0.040148, 
+            "walltime": 5.155, 
+            "instance": 223
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.039473, 
+            "walltime": 7.528, 
+            "instance": 224
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039678, 
+            "walltime": 8.532, 
+            "instance": 225
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.04062, 
+            "walltime": 6.773, 
+            "instance": 226
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.03957, 
+            "walltime": 12.823, 
+            "instance": 227
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040456, 
+            "walltime": 7.034, 
+            "instance": 228
+        }, 
+        {
+            "beta": 54, 
+            "slope": -0.039365, 
+            "walltime": 18.807, 
+            "instance": 229
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039558, 
+            "walltime": 15.017, 
+            "instance": 230
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040361, 
+            "walltime": 7.637, 
+            "instance": 231
+        }, 
+        {
+            "beta": 39, 
+            "slope": -0.040661, 
+            "walltime": 6.583, 
+            "instance": 232
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039531, 
+            "walltime": 10.498, 
+            "instance": 233
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.041566, 
+            "walltime": 6.247, 
+            "instance": 234
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.03918, 
+            "walltime": 10.656, 
+            "instance": 235
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039939, 
+            "walltime": 8.785, 
+            "instance": 236
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.039385, 
+            "walltime": 14.245, 
+            "instance": 237
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.041012, 
+            "walltime": 7.217, 
+            "instance": 238
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039677, 
+            "walltime": 10.463, 
+            "instance": 239
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039733, 
+            "walltime": 10.74, 
+            "instance": 240
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.03961, 
+            "walltime": 8.821, 
+            "instance": 241
+        }, 
+        {
+            "beta": 28, 
+            "slope": -0.043801, 
+            "walltime": 4.572, 
+            "instance": 242
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.039928, 
+            "walltime": 6.871, 
+            "instance": 243
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.040806, 
+            "walltime": 7.492, 
+            "instance": 244
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.039312, 
+            "walltime": 10.827, 
+            "instance": 245
+        }, 
+        {
+            "beta": 38, 
+            "slope": -0.040548, 
+            "walltime": 6.282, 
+            "instance": 246
+        }, 
+        {
+            "beta": 24, 
+            "slope": -0.04336, 
+            "walltime": 3.823, 
+            "instance": 247
+        }, 
+        {
+            "beta": 31, 
+            "slope": -0.042055, 
+            "walltime": 5.1, 
+            "instance": 248
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.039228, 
+            "walltime": 6.893, 
+            "instance": 249
+        }, 
+        {
+            "beta": 41, 
+            "slope": -0.040595, 
+            "walltime": 7.051, 
+            "instance": 250
+        }, 
+        {
+            "beta": 56, 
+            "slope": -0.040064, 
+            "walltime": 22.232, 
+            "instance": 251
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040549, 
+            "walltime": 9.846, 
+            "instance": 252
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039665, 
+            "walltime": 15.074, 
+            "instance": 253
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.040506, 
+            "walltime": 9.364, 
+            "instance": 254
+        }, 
+        {
+            "beta": 27, 
+            "slope": -0.043234, 
+            "walltime": 4.333, 
+            "instance": 255
+        }, 
+        {
+            "beta": 33, 
+            "slope": -0.041749, 
+            "walltime": 5.327, 
+            "instance": 256
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.04032, 
+            "walltime": 9.532, 
+            "instance": 257
+        }, 
+        {
+            "beta": 53, 
+            "slope": -0.040121, 
+            "walltime": 17.163, 
+            "instance": 258
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.039315, 
+            "walltime": 15.631, 
+            "instance": 259
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.039683, 
+            "walltime": 16.109, 
+            "instance": 260
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.039061, 
+            "walltime": 14.06, 
+            "instance": 261
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039756, 
+            "walltime": 12.855, 
+            "instance": 262
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.039708, 
+            "walltime": 7.603, 
+            "instance": 263
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.04027, 
+            "walltime": 7.485, 
+            "instance": 264
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.038382, 
+            "walltime": 15.316, 
+            "instance": 265
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.039621, 
+            "walltime": 31.931, 
+            "instance": 266
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039239, 
+            "walltime": 13.03, 
+            "instance": 267
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.039769, 
+            "walltime": 7.528, 
+            "instance": 268
+        }, 
+        {
+            "beta": 36, 
+            "slope": -0.041213, 
+            "walltime": 5.95, 
+            "instance": 269
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.039278, 
+            "walltime": 7.585, 
+            "instance": 270
+        }, 
+        {
+            "beta": 51, 
+            "slope": -0.038573, 
+            "walltime": 15.295, 
+            "instance": 271
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.040193, 
+            "walltime": 10.78, 
+            "instance": 272
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.040447, 
+            "walltime": 11.9, 
+            "instance": 273
+        }, 
+        {
+            "beta": 32, 
+            "slope": -0.041083, 
+            "walltime": 5.219, 
+            "instance": 274
+        }, 
+        {
+            "beta": 40, 
+            "slope": -0.041132, 
+            "walltime": 6.799, 
+            "instance": 275
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.038732, 
+            "walltime": 11.481, 
+            "instance": 276
+        }, 
+        {
+            "beta": 42, 
+            "slope": -0.041039, 
+            "walltime": 7.161, 
+            "instance": 277
+        }, 
+        {
+            "beta": 35, 
+            "slope": -0.041678, 
+            "walltime": 6.032, 
+            "instance": 278
+        }, 
+        {
+            "beta": 37, 
+            "slope": -0.040823, 
+            "walltime": 6.205, 
+            "instance": 279
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.039454, 
+            "walltime": 7.676, 
+            "instance": 280
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.03954, 
+            "walltime": 10.582, 
+            "instance": 281
+        }, 
+        {
+            "beta": 38, 
+            "slope": -0.040021, 
+            "walltime": 6.408, 
+            "instance": 282
+        }, 
+        {
+            "beta": 49, 
+            "slope": -0.039526, 
+            "walltime": 12.69, 
+            "instance": 283
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.039034, 
+            "walltime": 16.697, 
+            "instance": 284
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.04007, 
+            "walltime": 9.684, 
+            "instance": 285
+        }, 
+        {
+            "beta": 52, 
+            "slope": -0.040124, 
+            "walltime": 15.596, 
+            "instance": 286
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.039902, 
+            "walltime": 7.435, 
+            "instance": 287
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.039323, 
+            "walltime": 13.937, 
+            "instance": 288
+        }, 
+        {
+            "beta": 45, 
+            "slope": -0.039893, 
+            "walltime": 8.911, 
+            "instance": 289
+        }, 
+        {
+            "beta": 44, 
+            "slope": -0.040572, 
+            "walltime": 7.803, 
+            "instance": 290
+        }, 
+        {
+            "beta": 36, 
+            "slope": -0.041852, 
+            "walltime": 5.959, 
+            "instance": 291
+        }, 
+        {
+            "beta": 0, 
+            "slope": -0.037855, 
+            "walltime": 32.354, 
+            "instance": 292
+        }, 
+        {
+            "beta": 53, 
+            "slope": -0.039657, 
+            "walltime": 17.648, 
+            "instance": 293
+        }, 
+        {
+            "beta": 50, 
+            "slope": -0.039155, 
+            "walltime": 13.636, 
+            "instance": 294
+        }, 
+        {
+            "beta": 30, 
+            "slope": -0.041821, 
+            "walltime": 4.844, 
+            "instance": 295
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.039894, 
+            "walltime": 7.477, 
+            "instance": 296
+        }, 
+        {
+            "beta": 46, 
+            "slope": -0.039395, 
+            "walltime": 9.503, 
+            "instance": 297
+        }, 
+        {
+            "beta": 43, 
+            "slope": -0.04058, 
+            "walltime": 7.498, 
+            "instance": 298
+        }, 
+        {
+            "beta": 48, 
+            "slope": -0.039242, 
+            "walltime": 11.718, 
+            "instance": 299
+        }, 
+        {
+            "beta": 47, 
+            "slope": -0.038551, 
+            "walltime": 10.306, 
+            "instance": 300
+        }
+    ], 
+    "avg_runtime_per_succ_problem": 9.898, 
+    "pruning_betas": "2:80:1", 
+    "problem_dimension": "60", 
+    "succ_running_time": 2900.099
+}

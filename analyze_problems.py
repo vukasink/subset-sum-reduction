@@ -1,13 +1,16 @@
+import os
+import json
 import datetime
 import matplotlib.pyplot as plot
 from statistics import mean, median
 from test import *
 from ssproblem import *
 
-NUM_INSTANCES = 25
-DIMENSION = 80
-STARTING_BLOCK_SIZE = 30
-PROBLEMS_PATH = "instances/dim_80/set_24/"
+NUM_INSTANCES = 300
+DIMENSION = 74
+PROBLEMS_PATH = "instances/n_" + str(DIMENSION) + "/"
+RESULTS_PATH = "results/not_finished/"
+PRUNING_STRATEGY = "2:33:1"
 
 def read_in_problems(path, first, last):
 	tests = []
@@ -44,12 +47,83 @@ def read_in_problems(path, first, last):
 		tests.append(test)
 		
 	return tests
+	
+def read_in_results():
+	for filename in os.listdir(RESULTS_PATH):
+		solved_instances = 0
+		if filename.endswith(".json"):
+
+			f = open(RESULTS_PATH + filename, "r")
+			json_obj = json.load(f)
+	
+			dimension = int(json_obj["problem_dimension"])
+			if (not dimension == DIMENSION):
+				continue
+			if (not json_obj["non_pruning_betas"] == PRUNING_STRATEGY):
+				continue
+
+			print("******************************************")
+			print("Reading in results of the problems with dimension %d (N = %d) and non pruning strategy %s" % (dimension, int(json_obj["N"]), PRUNING_STRATEGY))
+			print("******************************************\n")
+			
+			N = json_obj["N"]
+			num_instances = json_obj["num_instances"]
+			total_running_time = json_obj["total_running_time"]
+			succ_running_time = json_obj["succ_running_time"]
+			avg_runtime_per_succ_problem = json_obj["avg_runtime_per_succ_problem"]
+			# results should be an array
+			results = json_obj["results"]
+			all_results = []
+			succ_results = []
+	
+			# non-zero
+			min_beta = 1000
+			max_beta = 1
+
+			for elem in results:
+				instance_num = elem["instance"]
+				walltime = elem["walltime"]
+				slope = elem["slope"]
+				beta = elem["beta"]
+				all_results.append((instance_num, walltime, beta, slope))
+				if (beta != 0):
+					solved_instances = solved_instances + 1
+					succ_results.append((instance_num, walltime, beta, slope))
+					if (beta < min_beta):
+						min_beta = beta
+					if (beta > max_beta):
+						max_beta = beta
+
+			sorted_walltime_succ = sorted(succ_results, key = lambda x: x[1], reverse = True)
+			return all_results, sorted_walltime_succ
+	return [], []
 
 def square(num):
 	return num * num
 
 def main():
 	tests = read_in_problems(PROBLEMS_PATH, 1, NUM_INSTANCES)
+	all_results, succ_results = read_in_results()
+
+	for i in range(NUM_INSTANCES):
+		tmp = all_results[i]
+		tmp = tmp + (tests[tmp[0] - 1].ssproblem.d, )
+		all_results[i] = tmp
+		for j in range(len(succ_results)):
+			if (succ_results[j][0] - 1 == i):
+				tmp_succ = succ_results[j]
+				tmp_succ = tmp_succ + (tests[tmp[0] - 1].ssproblem.d, )
+				succ_results[j] = tmp_succ
+
+	unsolved_probs = set(all_results).symmetric_difference(set(succ_results))
+	print("Unsolved problems")
+	for elem in unsolved_probs:
+		print(elem)
+	
+	print("\nFirst 10 problems that took most time")
+	for i in range(15):
+		print(succ_results[i])
+	
 	sum_avg_A_total = 0
 	sum_avg_A_contributing = 0
 	averages = []
@@ -95,7 +169,7 @@ def main():
 		even_elems_contr = len([elem for elem in A_contr if elem % 2 == 0])
 		odd_elems_contr = len(A_contr) - even_elems_contr
 		diagnostic_parity.append([i + 1, even_elems, odd_elems, even_elems_contr, odd_elems_contr])
-		print(diagnostic_parity[i], "; ", even_elems_contr, "; ", odd_elems_contr, ": ", len(A_contr))
+#		print(diagnostic_parity[i], "; ", even_elems_contr, "; ", odd_elems_contr, ": ", len(A_contr))
 
 		# Statistic over whole A
 		A_mean = mean(problem.A)
@@ -156,9 +230,9 @@ def main():
 
 	# sorted without any addition parameters sorts in _ascending_ order
 
-	print("\n***************")
+	print("\n******************************************")
 	print("sorted by mean absolute deviation")
-	print("***************\n")
+	print("******************************************\n")
 
 	sorted_MAD = sorted(diagnostic, key = lambda x: x[5])
 #	for i in range(NUM_INSTANCES):
@@ -185,7 +259,7 @@ def main():
 
 	sorted_max_A = sorted(diagnostic, key = lambda x: x[13])
 
-	sorted_density = sorted(diagnostic, key = lambda x: x[14], reverse = True)
+	sorted_density = sorted(diagnostic, key = lambda x: x[14])
 
 	
 

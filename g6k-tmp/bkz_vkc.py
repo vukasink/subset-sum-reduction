@@ -85,6 +85,10 @@ def bkz_kernel(arg0, params=None, seed=None):
 	pre_blocksize = params.pop("bkz/pre_blocksize")
 	tours = params.pop("bkz/tours")
 
+	print_basis = params.pop("print_basis")
+	if (print_basis == "yes"):
+		print_basis = True
+
 	# begin vukasink manipulation
 	basic_blocksizes = params.pop("bkz/basic_blocksizes")
 	if (not basic_blocksizes == None):
@@ -131,16 +135,20 @@ def bkz_kernel(arg0, params=None, seed=None):
 		f = open(str(solution_in), 'r')
 
 		line = f.readline()
+		line = line[1:-2]
+		b = line.split(', ')
+		A_is = [ int(elem) for elem in b ]
+
 		line = f.readline()
 		line = line[1:-2]
-
 		b = line.split(', ')
 		solution = [ int(elem) for elem in b ]
-
 		# there's no point in having beta > than problem_dim + 1
 		# because that's the size of basis of our lattice.
 		problem_dim = len(solution)
 		blocksizes = [ elem for elem in blocksizes if elem[0] <= (problem_dim + 1) ]
+		line = f.readline()
+		target_sum = int(line)
 
 	#print("solution:")
 	#print(solution)
@@ -183,8 +191,9 @@ def bkz_kernel(arg0, params=None, seed=None):
 										strategies=BKZ_FPYLLL.DEFAULT_STRATEGY,
 										max_loops=1)
 					bkz(par)
-					#print(bkz.A)
-					if (check_solution(solution, bkz.A[0])):
+					if print_basis:
+						print(bkz.A)
+					if (check_solution(solution, bkz.A[0], A_is, target_sum)):
 						total_time = round(time.time() - T0, 3)
 						slope_final = round(basis_quality(M)["/"], 6)
 						json_obj = { "instance": int(solution_in_num), "beta": blocksize, "walltime": total_time, "slope": slope_final }
@@ -289,17 +298,19 @@ def parse_blocksizes(blocksizes):
 	else:
 		return eval("[%s]" % re.sub("\.", ",", blocksizes))
 
-def check_solution(solution, candidate):
+def check_solution(solution, candidate, A_is, target_sum):
 	n = len(solution)
 	if (candidate[n] != 0 or abs(candidate[n + 1]) != 1 or candidate[n + 2] != 0):
 		return False
-
+	
+	tmp_sol = []
 	for i in range(n):
-		c_i = abs(candidate[i] - candidate[n + 1]) // 2
-		if (c_i != solution[i]):
-			return False
-
-	return True
+		tmp_sol.append(abs(candidate[i] - candidate[n + 1]) // 2)
+	
+	if (sum([ tmp_sol[i] * A_is[i] for i in range(n) ]) == target_sum):
+		return True
+	else:
+		return False
 # end vukasink manipulation
 
 if __name__ == '__main__':
