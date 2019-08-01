@@ -58,17 +58,19 @@ def solve_instance(q, task_count, results):
 
 def run_set(dimension, lattice_version):
 	num_instances = LAST_P - FIRST_P + 1
-	solved_instances = 0
 	
 	N_array = [ elem[1] for elem in n_to_N if elem[0] == dimension ]
 	N_array = N_array[0]
 
 	for N in N_array:
+		print("--- N = %d" % N)
 		res_obj = {}
 		res_obj.update({"lattice_version": lattice_version})
 		res_obj.update({"problem_dimension": dimension})
+		res_obj.update({"N": N})
 		res_obj.update({"num_instances": num_instances})
 
+		solved_instances = 0
 		total_running_time = 0
 		succ_running_time = 0
 		# average running time per problem
@@ -114,11 +116,11 @@ def run_set(dimension, lattice_version):
 			if (beta > 0):
 				succ_running_time = succ_running_time + walltime
 				solved_instances = solved_instances + 1
-				print("solved instance num %d" % solved_instances)
-		res_obj.update({"succ_running_time": round(succ_running_time, 3)})
-		avg_succ_running_time = round(succ_running_time / solved_instances, 3)
+		res_obj.update({"succ_running_time": round(succ_running_time, 4)})
+		avg_succ_running_time = round(succ_running_time / solved_instances, 4)
 		res_obj.update({"avg_runtime_per_succ_problem": avg_succ_running_time})
-		res_obj.update({"total_running_time": round(total_running_time, 3)})
+		res_obj.update({"total_running_time": round(total_running_time, 4)})
+		res_obj.update({"solved_instances": solved_instances})
 		# write final result to json file
 		hash_obj_name = str(dimension) + str(N) + BLOCKSIZES_OPTION
 		hash_obj = hashlib.sha1(hash_obj_name.encode())

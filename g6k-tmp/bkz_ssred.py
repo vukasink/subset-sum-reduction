@@ -22,7 +22,7 @@ from g6k.utils.stats import SieveTreeTracer, dummy_tracer
 from g6k.utils.util import load_prebkz, load_matrix_file 
 
 DELIMITER = 68
-# DELIMITER = 54
+#DELIMITER = 50
 
 def bkz_kernel(arg0, params=None, seed=None):
 	"""
@@ -205,7 +205,6 @@ def bkz_kernel(arg0, params=None, seed=None):
 						print(bkz.A)
 					
 					if (blocksize == DELIMITER):
-						print("XXXXXXX changing to pump_n_jump")
 						algbkz = "pump_and_jump"
 						MM = GSO.Mat(bkz.A, float_type="double",
 								U=IntegerMatrix.identity(bkz.A.nrows, int_type=bkz.A.int_type),
@@ -223,20 +222,11 @@ def bkz_kernel(arg0, params=None, seed=None):
 					if (sol[0]):
 						total_time = round(time.time() - T0, 3)
 						slope_final = round(basis_quality(M)["/"], 6)
-						json_obj = { "instance": int(solution_in_num), "beta": blocksize, "walltime": total_time, "slope": slope_final, "beta_norm": beta_norm, "first_right_norm": round(first_norm, 4) }
+						json_obj = { "instance": int(solution_in_num), "beta": blocksize, "walltime": total_time, "slope": slope_final, "beta_norm": beta_norm, "first_smaller_norm": round(first_norm, 4) }
 						must_break = True
 						break
 
-				elif algbkz == "naive":
-					print("starting NAIVE")
-					naive_bkz_tour(g6k, tracer, blocksize,
-								   extra_dim4free=extra_dim4free,
-								   dim4free_fun=dim4free_fun,
-								   workout_params=workout_params,
-								   pump_params=pump_params)
-
 				elif algbkz == "pump_and_jump":
-					print("starting PUMP_AND_JUMP")
 					pump_n_jump_bkz_tour(g6k, tracer, blocksize, jump=jump,
 										 dim4free_fun=dim4free_fun,
 										 extra_dim4free=extra_dim4free,
@@ -252,7 +242,7 @@ def bkz_kernel(arg0, params=None, seed=None):
 					if (sol[0]):
 						total_time = round(time.time() - T0, 3)
 						slope_final = round(basis_quality(M)["/"], 6)
-						json_obj = { "instance": int(solution_in_num), "beta": blocksize, "walltime": total_time, "slope": slope_final, "beta_norm": beta_norm, "first_right_norm": round(first_norm, 4) }
+						json_obj = { "instance": int(solution_in_num), "beta": blocksize, "walltime": total_time, "slope": slope_final, "beta_norm": beta_norm, "first_smaller_norm": round(first_norm, 4) }
 						must_break = True
 						break
 				else:
