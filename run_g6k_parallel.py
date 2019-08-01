@@ -8,9 +8,9 @@ from subprocess import call
 from multiprocessing import Manager, Process, JoinableQueue
 from test import *
 from ssproblem import *
-# 58, [10, 16]
+# 60, [10, 14]
 n_to_N = [ (50, [10, 14]), (52, [10, 14]), (54, [10, 16]), (56, [10, 16]), (58, [10, 16]),
-			(60, [10, 14]), (62, [10, 16]), (64, [10, 16]), (66, [10, 16]), (68, [10, 16]),
+			(60, [14]), (62, [10, 16]), (64, [10, 16]), (66, [10, 16]), (68, [10, 16]),
 			(70, [10, 16]), (72, [10, 16]), (74, [10, 16]), (76, [14, 16]), (78, [10, 16]),
 			(80, [14, 16]), (82, [10, 16]), (84, [10, 16]), (86, [10, 16]), (88, [10, 16]),
 			(90, [10, 16]), (92, [10, 16]), (94, [10, 16]), (96, [10, 16]), (98, [10, 16]),
@@ -51,13 +51,6 @@ def solve_instance(q, task_count, results):
 		walltime = json_str["walltime"]
 		beta = json_str["beta"]
 		slope = json_str["slope"]
-
-#		total_running_time = total_running_time + walltime
-		# running time of problems that were solved
-#		if (beta > 0):
-#			succ_running_time = succ_running_time + walltime
-#			solved_instances = solved_instances + 1
-#		info_arr_1.append((json_str["instance"], beta, walltime, json_str["slope"]))
 		
 		results.append(json_str)
 		q.task_done()
@@ -66,24 +59,21 @@ def run_set(dimension, lattice_version):
 	num_instances = LAST_P - FIRST_P + 1
 	solved_instances = 0
 	
-	res_obj = {}
-	res_obj.update({"lattice_version": lattice_version})
-	res_obj.update({"problem_dimension": dimension})
-	res_obj.update({"num_instances": num_instances})
-
-	total_running_time = 0
-	succ_running_time = 0
-	# average running time per problem
-	avg_running_time = 0
-
-	res_obj.update({"results": []})
-
 	N_array = [ elem[1] for elem in n_to_N if elem[0] == dimension]
 	N_array = N_array[0]
 
 	for N in N_array:
-		# info_arr_1 = [ (instance_num, beta, time, slope) ]
-		info_arr_1 = []
+		res_obj = {}
+		res_obj.update({"lattice_version": lattice_version})
+		res_obj.update({"problem_dimension": dimension})
+		res_obj.update({"num_instances": num_instances})
+
+		total_running_time = 0
+		succ_running_time = 0
+		# average running time per problem
+		avg_running_time = 0
+
+		res_obj.update({"results": []})
 
 		with Manager() as manager:
 			results = manager.list()
@@ -97,6 +87,7 @@ def run_set(dimension, lattice_version):
 		
 			# start the workers
 			item_count = q.qsize()
+			print("XXX item count: %d" % item_count)
 			for i in range(3):
 				worker = Process(target=solve_instance, args=(q, item_count, results))
 				worker.start()
