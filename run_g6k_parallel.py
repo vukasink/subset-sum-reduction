@@ -60,7 +60,7 @@ def run_set(dimension, lattice_version):
 	num_instances = LAST_P - FIRST_P + 1
 	solved_instances = 0
 	
-	N_array = [ elem[1] for elem in n_to_N if elem[0] == dimension]
+	N_array = [ elem[1] for elem in n_to_N if elem[0] == dimension ]
 	N_array = N_array[0]
 
 	for N in N_array:
@@ -88,7 +88,9 @@ def run_set(dimension, lattice_version):
 		
 			# start the workers
 			item_count = q.qsize()
-			for i in range(3):
+			# set number of cores to use
+			num_proc = 3
+			for i in range(num_proc):
 				worker = Process(target=solve_instance, args=(q, item_count, results))
 				worker.start()
 
@@ -120,7 +122,7 @@ def run_set(dimension, lattice_version):
 		# write final result to json file
 		hash_obj_name = str(dimension) + str(N) + BLOCKSIZES_OPTION
 		hash_obj = hashlib.sha1(hash_obj_name.encode())
-		filename = "result_n_" + str(dimension) + "_N_" + str(N) + "_" +  hash_obj.hexdigest()[0:6] + ".json" 
+		filename = "results/ssred_category_I/result_n_" + str(dimension) + "_N_" + str(N) + "_" +  hash_obj.hexdigest()[0:6] + ".json"
 		f = open(filename, "w")
 		f.write(json.dumps(res_obj, indent = 4, separators = (', ', ': ')))
 		f.close()
