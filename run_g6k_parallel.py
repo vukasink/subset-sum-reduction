@@ -8,15 +8,16 @@ from subprocess import call
 from multiprocessing import Manager, Process, JoinableQueue
 from test import *
 from ssproblem import *
-# 60, [10, 14]
+
 n_to_N = [ (50, [10, 14]), (52, [10, 14]), (54, [10, 16]), (56, [10, 16]), (58, [10, 16]),
-			(60, [14]), (62, [10, 16]), (64, [10, 16]), (66, [10, 16]), (68, [10, 16]),
+			(60, [10, 14]), (62, [10, 16]), (64, [10, 16]), (66, [10, 16]), (68, [10, 16]),
 			(70, [10, 16]), (72, [10, 16]), (74, [10, 16]), (76, [14, 16]), (78, [10, 16]),
 			(80, [14, 16]), (82, [10, 16]), (84, [10, 16]), (86, [10, 16]), (88, [10, 16]),
 			(90, [10, 16]), (92, [10, 16]), (94, [10, 16]), (96, [10, 16]), (98, [10, 16]),
 			(100, [11, 16]) ]
 FIRST_P = 1
 LAST_P = 300
+BLOCKSIZES_OPTION = "2.4.8.16.32"
 
 def solve_instance(q, task_count, results):
 	while not q.empty():
@@ -87,7 +88,6 @@ def run_set(dimension, lattice_version):
 		
 			# start the workers
 			item_count = q.qsize()
-			print("XXX item count: %d" % item_count)
 			for i in range(3):
 				worker = Process(target=solve_instance, args=(q, item_count, results))
 				worker.start()
@@ -118,7 +118,7 @@ def run_set(dimension, lattice_version):
 		res_obj.update({"avg_runtime_per_succ_problem": avg_succ_running_time})
 		res_obj.update({"total_running_time": round(total_running_time, 3)})
 		# write final result to json file
-		hash_obj_name = str(dimension) + str(N)
+		hash_obj_name = str(dimension) + str(N) + BLOCKSIZES_OPTION
 		hash_obj = hashlib.sha1(hash_obj_name.encode())
 		filename = "result_n_" + str(dimension) + "_N_" + str(N) + "_" +  hash_obj.hexdigest()[0:6] + ".json" 
 		f = open(filename, "w")
