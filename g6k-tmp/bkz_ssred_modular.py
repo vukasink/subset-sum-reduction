@@ -153,7 +153,6 @@ def bkz_kernel(arg0, params=None, seed=None):
 		line = f.readline()
 		target_sum = int(line)
 		target_sum = target_sum % (2**problem_dim)
-		print("modular target sum %d" % target_sum)
 		
 	algbkz = "fpylll"
 
