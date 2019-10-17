@@ -39,6 +39,7 @@ def solve_instance(q, task_count, results):
 		cmd_g6k = "../g6k/bkz_ssred.py 100" + dummy_options + file_in_option + solution_in + blocksizes_option
 		cmd_whole = cmd_g6k + " > " + tmp_filename
 #		print(cmd_whole)
+#		../g6k/bkz_ssred.py 100 --bkz/pre_beta 2 --bkz/tours 1 --workers 1 --file_in --solution_in --bkz/basic_blocksizes --bkz/pruning_blocksizes
 		subprocess.call(cmd_whole, shell=True)
 	
 #		time.sleep(1)
