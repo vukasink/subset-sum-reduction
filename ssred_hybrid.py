@@ -3,10 +3,12 @@ import sys
 from subprocess import call
 from statistics import mean, median
 from random import shuffle
+from math import sqrt
 from itertools import combinations
 from test import *
 from ssproblem import *
 from numpy import matmul
+from numpy.linalg import solve, inv
 
 NUM_INSTANCES = 300
 
@@ -154,7 +156,7 @@ def GSO(B):
 	B_p = []
 	basis_dim = len(B)
 	lattice_dim = len(B[0])
-	print("basis dimension is %d, lattice dimension is %d" % (basis_dim, lattice_dim))
+	print("basis dimension is %d, vector len is %d" % (basis_dim, lattice_dim))
 	for i in range(basis_dim):
 #		print("----")
 #		print("-- i = %d" % i)
@@ -194,22 +196,34 @@ def transpose(B):
 	return B_new
 
 def main():
+	# this can be made configurable via command line arguments
+	# now it's static because it's WIP
 	dimension = 50
 	N = 16
-	tests = read_in_problems(dimension, 1, 1)
+	tests = read_in_problems(dimension, 5, 5)
 
 	col_dim = dimension + 1
+
+	# n_2 is length of (c_i, ..., c_{n + 1}), where i
+	# is the 'separation parameter' mentioned in thesis.
 	n_2 = 11
+
+	min_norm = 100000
+	max_norm = 0
 
 	for test in tests:
 		instance = test.ssproblem
 		A = instance.A
 		original_A = A.copy()
-			
-		for i in range(1):
+
+		# 1000 here is arbitrary number of permutations, for now!
+		for i in range(1000):
 			print("iteration (with new permutation) %d" % (i + 1))
+			# permute A
 			shuffle(A)
 			instance.A = A
+			print("A in this permutation iteration:")
+			print(instance.A)
 			B = subset_sum_to_lattice_basis(instance, N)
 			"""
 					| B_1 B_2 |	  | B_1 B_2 |
@@ -224,11 +238,11 @@ def main():
 
 			print("Going to reduce B_1...")
 
+			# blocksizes are arbitrary chosen here, for testing purposes
 			generate_input_file_fplll("B_1_lattice", B_1)
 			dummy_options = " --bkz/pre_beta 2 --bkz/tours 1 --workers 1"
 			file_in_option = " --file_in B_1_lattice"
-			blocksizes_option = " --bkz/basic_blocksizes 2:33:1 --bkz/pruning_blocksizes 33:50:1" 	
-			cmd_g6k = "../g6k/bkz_vkc.py 100" + dummy_options + file_in_option + blocksizes_option
+			blocksizes_option = " --bkz/basic_blocksizes 2:43:1 --bkz/pruning_blocksizes 43:52:1"				cmd_g6k = "../g6k/bkz_vkc.py 100" + dummy_options + file_in_option + blocksizes_option
 			cmd_whole = cmd_g6k + " > tmp_hybrid_algorithm"
 			subprocess.call(cmd_whole, shell=True)
 			# beta-BKZ-reduced B_1
@@ -236,43 +250,43 @@ def main():
 		
 			print("B_1 reduction done!")
 
-#			print("Going to reduce B_2...")
-#			generate_input_file_fplll("B_2_lattice", B_2)
-#			dummy_options = " --bkz/pre_beta 2 --bkz/tours 1 --workers 1"
-#			file_in_option = " --file_in B_2_lattice"
-#			blocksizes_option = " --bkz/basic_blocksizes 2.4.8.16.32 --bkz/pruning_blocksizes 33:50:1" 	
-#			cmd_g6k = "../g6k/bkz_vkc.py 100" + dummy_options + file_in_option + blocksizes_option
-#			cmd_whole = cmd_g6k + " > tmp_hybrid_algorithm"
-#			subprocess.call(cmd_whole, shell=True)
-			# beta-BKZ-reduced B_2
-#			B_2_reduced = parse_output("tmp_hybrid_algorithm")
-			
-#			print("B_2 reduction done!")
-			
-#			print("reduced B_2")
-#			for elem in B_2_reduced:
-#				print(elem)
-
 			# transpose B_2 in order to use function matmul later
 			B_2 = transpose(B_2)
+			print("--- B2:")
+			for elem in B_2:
+				print(elem)
+			print("--- end B2.")
 			comb = list(range(n_2 - 1))
 			
 			cnt = 1
 			for combination in combinations(comb, (n_2 - 1) // 2):
-				s_2 = [ 1 if i in combination else 0 for i in range(n_2) ]
+				s_2 = [ -1 if i in combination else 0 for i in range(n_2) ]
+				s_2[len(s_2) - 1] = 1
 				print("------------------------")
 				print("interation %d" % cnt)
+				cnt = cnt + 1
+				# calculate target vector t (we call it v_2 here) = B_2 * s_2
 				v_2 = matmul(B_2, s_2)
 				v_2 = v_2.tolist()
+				v_2 = [ -elem for elem in v_2 ]
+				# run the Babai's Nearest Plane algorithm and save the output to bdd_sol
 				bdd_sol = nearest_plane_reduction(B_1_reduced, v_2)
-				cnt = cnt + 1
-				print("v_2:")
-				print(v_2)
-				print("bdd sol:")
-				print(bdd_sol)
-				print("diff between the two:")
-				print([ v_2[i] - bdd_sol[i] for i in range(0, len(v_2)) ])
-				# TODO calculate v_2 = B_3 * s_2
+
+				diff = [ v_2[i] - bdd_sol[i] for i in range(0, len(v_2)) ]
+				print("diff:")
+				print(diff)
+				diff_norm = sqrt(sum([ elem * elem for elem in diff ]))
+				if (diff_norm < min_norm):
+					min_norm = diff_norm
+				if (diff_norm > max_norm):
+					max_norm = diff_norm
+				print("diff norm: %d" % int(diff_norm))
+				# this below is currently there just for testing purposes, we are in
+				# fact looking for even shorter norm (sqrt(i + 1))
+				if (diff_norm < 60):
+					print("SUCCESS! found vector with short norm")
+	print("max norm encountered: %d" % int(max_norm))
+	print("min norm encountered: %d" % int(min_norm))
 
 if __name__ == "__main__":
     main()
