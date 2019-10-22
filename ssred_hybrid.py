@@ -200,7 +200,7 @@ def main():
 	# now it's static because it's WIP
 	dimension = 50
 	N = 16
-	tests = read_in_problems(dimension, 5, 5)
+	tests = read_in_problems(dimension, 4, 4)
 
 	col_dim = dimension + 1
 
@@ -214,16 +214,27 @@ def main():
 	for test in tests:
 		instance = test.ssproblem
 		A = instance.A
-		original_A = A.copy()
+		E = instance.E
 
 		# 1000 here is arbitrary number of permutations, for now!
-		for i in range(1000):
+		for i in range(1300):
 			print("iteration (with new permutation) %d" % (i + 1))
-			# permute A
-			shuffle(A)
-			instance.A = A
-			print("A in this permutation iteration:")
-			print(instance.A)
+			# permute A and E
+			perm_array = [ elem for elem in range(len(A))]
+			shuffle(perm_array)
+			perm_A = []
+			perm_E = []
+			for elem in perm_array:
+				perm_A.append(A[elem])
+				perm_E.append(E[elem])
+
+			instance.A = perm_A
+			instance.E = perm_E
+			print("solution vector after this permutation:")
+			print(instance.E)
+			print("last 10 elements in solution vector after this permutation:")
+			print(instance.E[len(instance.E) - 10:])
+
 			B = subset_sum_to_lattice_basis(instance, N)
 			"""
 					| B_1 B_2 |	  | B_1 B_2 |
@@ -242,7 +253,8 @@ def main():
 			generate_input_file_fplll("B_1_lattice", B_1)
 			dummy_options = " --bkz/pre_beta 2 --bkz/tours 1 --workers 1"
 			file_in_option = " --file_in B_1_lattice"
-			blocksizes_option = " --bkz/basic_blocksizes 2:43:1 --bkz/pruning_blocksizes 43:52:1"				cmd_g6k = "../g6k/bkz_vkc.py 100" + dummy_options + file_in_option + blocksizes_option
+			blocksizes_option = " --bkz/basic_blocksizes 2:43:1 --bkz/pruning_blocksizes 43:52:1"
+			cmd_g6k = "../g6k/bkz_vkc.py 100" + dummy_options + file_in_option + blocksizes_option
 			cmd_whole = cmd_g6k + " > tmp_hybrid_algorithm"
 			subprocess.call(cmd_whole, shell=True)
 			# beta-BKZ-reduced B_1
@@ -264,6 +276,7 @@ def main():
 				s_2[len(s_2) - 1] = 1
 				print("------------------------")
 				print("interation %d" % cnt)
+				print("s_2 guess (without last elem): %s" % s_2[:-1])
 				cnt = cnt + 1
 				# calculate target vector t (we call it v_2 here) = B_2 * s_2
 				v_2 = matmul(B_2, s_2)
